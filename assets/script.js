@@ -1,4 +1,4 @@
-const levelSelect = document.getElementById("board")
+const levelSelect = document.getElementById("menu")
 levelSelect.addEventListener("click", loadBoard)
 
 //insert game board after clicking on difficulty button
