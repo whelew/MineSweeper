@@ -26,7 +26,9 @@ function restartGame() {
 
 }
 
+let menu = document.getElementById("board");
+menu.addEventListener("click", createBoard)
+//insert game board after clicking on difficulty button
 function createBoard() {
-    //<h1>Mines:<span id="mines-counter"></span></h1>
-    //<div id="board"></div>
-}
+    alert ("You clicked the button");
+};
