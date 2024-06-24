@@ -26,9 +26,22 @@ function restartGame() {
 
 }
 
-let menu = document.getElementById("board");
-menu.addEventListener("click", createBoard)
+const levelSelect = document.getElementById("board")
+levelSelect.addEventListener("click", createBoard)
+
 //insert game board after clicking on difficulty button
-function createBoard() {
-    alert ("You clicked the button");
+function createBoard(event) {
+    switch (event.target.id) {
+        case "easy":
+            alert ("You clicked the easy button") 
+            break;
+        case "normal":
+            alert ("You clicked the normal button")
+            break; 
+        case "hard":
+            alert ("You clicked the hard button")
+            break;
+        case "leader-board":
+            alert ("You clicked the leaderboard button")
+    }
 };
