@@ -26,6 +26,19 @@ body {
     margin: 0 auto;
 }
 
+
+/* for game board tiles*/
+.game-board div {
+    width: 48px;
+    height: 48px;
+    border: 1px solid whitesmoke;
+
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #easy-board {
     width: 400px;
     height: 400px;
@@ -40,3 +53,4 @@ body {
     width: 1000px;
     height: 600px;
 } 
+
