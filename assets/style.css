@@ -24,6 +24,8 @@ body {
     border: 10px solid darkgray;
     background-color: lightgray;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 
@@ -54,3 +56,34 @@ body {
     height: 600px;
 } 
 
+.number-one {
+    color: blue;
+}
+
+.number-two {
+    color: green;
+}
+
+.number-three {
+    color: red;
+}
+
+.number-four {
+    color: darkblue;
+}
+
+.number-five {
+    color: darkred;
+}
+
+.number-six {
+    color: darkcyan
+}
+
+.number-seven {
+    color: black;
+}
+
+.number-eight {
+    color: burlywood;
+}
