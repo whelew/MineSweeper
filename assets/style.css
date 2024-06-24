@@ -19,3 +19,24 @@ body {
     padding: 1rem;
     width: 50%;
 }
+
+.game-board {
+    border: 10px solid darkgray;
+    background-color: lightgray;
+    margin: 0 auto;
+}
+
+#easy-board {
+    width: 400px;
+    height: 400px;
+} 
+
+#normal-board {
+    width: 600px;
+    height: 600px;
+} 
+
+#hard-board {
+    width: 1000px;
+    height: 600px;
+} 

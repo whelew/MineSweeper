@@ -6,19 +6,13 @@ function loadBoard(event) {
     
     switch (event.target.id) {
         case "easy":
-            levelSelect.innerHTML = `
-            <div id=easy-board><p>game board 1</p></div>
-            `
+            levelSelect.innerHTML = `<div class="game-board" id="easy-board"><p>game board 1</p></div>`
             break;
         case "normal":
-            levelSelect.innerHTML = `
-            <div id=normal-board><p>game board 2</p></div>
-            `
+            levelSelect.innerHTML = `<div class="game-board" id="normal-board"><p>game board 2</p></div>`
             break; 
         case "hard":
-            levelSelect.innerHTML = `
-            <div id=hard-board><p>game board 3</p></div>
-            `
+            levelSelect.innerHTML = `<div class="game-board" id="hard-board"><p>game board 3</p></div>`
             break;
         case "leader-board":
             alert ("You clicked the leaderboard button");
