@@ -6,7 +6,10 @@ function loadBoard(event) {
     
     switch (event.target.id) {
         case "easy":
-            levelSelect.innerHTML = `<div class="game-board" id="easy-board"></div>`
+            levelSelect.innerHTML = `
+            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">10</span></p>
+            <div class="game-board" id="easy-board"></div>
+            `
             populateGameBoard(8, 8, "easy-board");
             break;
         case "normal":
@@ -58,8 +61,8 @@ function revealTile(event) {
 
 function markTile(event) {
     event.preventDefault();
-    
     const currentImg = this.querySelector("img");
+    var flagCounter = parseInt(document.getElementById("count").innerText)
 
     if (currentImg === null) {
         let flagImg = document.createElement("img");
@@ -68,8 +71,10 @@ function markTile(event) {
         flagImg.setAttribute("width", "70%");
         flagImg.setAttribute("height", "70%");
         this.appendChild(flagImg);
+        document.getElementById("count").innerText = --flagCounter
     }  else {
         this.removeChild(currentImg);
+        document.getElementById("count").innerText = ++flagCounter
     }
 }
 
