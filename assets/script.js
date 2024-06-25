@@ -23,12 +23,6 @@ function loadBoard(event) {
     }
 };
 
-
-
-function runGame() {
-    
-} 
-
 //populates easy game board with tiles
 function populateGameBoard(rows, columns, boardId) {
     var board = [];
@@ -46,6 +40,9 @@ function populateGameBoard(rows, columns, boardId) {
     console.log(board);    
 }
 
+function runGame() {
+    
+} 
 
 function incrementFlag() {
 
@@ -54,6 +51,9 @@ function incrementFlag() {
 function revealTile() {
 
 }
+
+let gameTile = document.getElementsByClassName("game-board");
+gameTile.addEventListener("")
 
 function markTile() {
 

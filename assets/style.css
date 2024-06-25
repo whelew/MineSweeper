@@ -87,3 +87,7 @@ body {
 .number-eight {
     color: burlywood;
 }
+
+.game-board :hover {
+    background-color: aquamarine;
+}
