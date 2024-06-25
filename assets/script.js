@@ -52,21 +52,27 @@ function populateGameBoard(rows, columns, boardId) {
 }
 
 let mines = []
-
+// pushes a number of coordinates into an array
 function setMines() {
-    
+    mines = [] //resets array
+
     for (i = 0; i < 10; i++) {
-        let x = Math.floor(Math.random() * 8) +1;
-        let y = Math.floor(Math.random() * 8) +1;
+        let x = Math.floor(Math.random() * 8);
+        let y = Math.floor(Math.random() * 8);
         let location = [x, y];
-        mines.push(location)
+        if (!mines.some(mine => mine[0] === x && mine[1] === y)) {
+            mines.push(location)    
+        } else {
+            i--;
+        }
     }
     console.log(mines)
 } 
 
+
+// will reveal hidden tile
 function revealTile(event) {
-    event.preventDefault();
-    alert ("you left clicked the div");
+
 }
 
 
@@ -91,10 +97,13 @@ function markTile(event) {
     }
 }
 
+// will check if tile revealed has a mine on the location
 function checkTile() {
-
+    
 }
 
+
+// will restart the current game
 function restartGame() {
 
 }
