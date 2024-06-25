@@ -32,6 +32,8 @@ function populateGameBoard(rows, columns, boardId) {
         for (let c = 0; c < columns; c++) {
             let tile = document.createElement("div");
             tile.id = r.toString() + "-" + c.toString();
+            tile.addEventListener("contextmenu", markTile);
+            tile.addEventListener("click", revealTile)
             document.getElementById(boardId).append(tile)
             row.push(tile);
         }
@@ -45,18 +47,17 @@ function runGame() {
 } 
 
 function incrementFlag() {
-
+    
 }
 
-function revealTile() {
-
+function revealTile(event) {
+    event.preventDefault();
+    alert ("you left clicked the div");
 }
 
-let gameTile = document.getElementsByClassName("game-board");
-gameTile.addEventListener("")
-
-function markTile() {
-
+function markTile(event) {
+    event.preventDefault();
+    alert ("you right clicked the div");     
 }
 
 function checkTile() {
