@@ -32,9 +32,10 @@ function populateGameBoard(rows, columns, boardId) {
         for (let c = 0; c < columns; c++) {
             let tile = document.createElement("div");
             tile.id = r.toString() + "-" + c.toString();
+            tile.className = "game-tile"
             tile.addEventListener("contextmenu", markTile);
-            tile.addEventListener("click", revealTile)
-            document.getElementById(boardId).append(tile)
+            tile.addEventListener("click", revealTile);
+            document.getElementById(boardId).append(tile);
             row.push(tile);
         }
         board.push(row);
@@ -57,7 +58,19 @@ function revealTile(event) {
 
 function markTile(event) {
     event.preventDefault();
-    alert ("you right clicked the div");     
+    
+    if (this.querySelector("img") === null) {
+        let flagImg = document.createElement("img");
+        flagImg.setAttribute("src", "assets/images/flag.png");
+        flagImg.id = "flag";
+        flagImg.setAttribute("width", "70%");
+        flagImg.setAttribute("height", "70%");
+        
+    
+        this.appendChild(flagImg);
+    }  else {
+        this.remove();
+    }
 }
 
 function checkTile() {
