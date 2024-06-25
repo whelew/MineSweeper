@@ -60,7 +60,7 @@ function setMines() {
         let x = Math.floor(Math.random() * 8);
         let y = Math.floor(Math.random() * 8);
         let location = [x, y];
-        if (!mines.some(mine => mine[0] === x && mine[1] === y)) {
+        if (!mines.some(mine => mine[0] === x && mine[1] === y)) { //avoid duplicate mines
             mines.push(location)    
         } else {
             i--;
@@ -72,7 +72,14 @@ function setMines() {
 
 // will reveal hidden tile
 function revealTile(event) {
+    const currentTileId = event.target.id;
+    const [row, col] = currentTileId.split("-").map(Number); //map.Number to change string into number
 
+    if (mines.some(mine => mine[0] === row && mine[1] === col)) {
+        alert ("you hit a mine");
+    } else {
+        alert ("you clicked a safe tile");
+    }
 }
 
 
