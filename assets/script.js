@@ -11,6 +11,7 @@ function loadBoard(event) {
             <div class="game-board" id="easy-board"></div>
             `
             populateGameBoard(8, 8, "easy-board");
+            setMines();
             break;
         case "normal":
             levelSelect.innerHTML = `
@@ -50,19 +51,27 @@ function populateGameBoard(rows, columns, boardId) {
     console.log(board);    
 }
 
-function runGame() {
-    
-} 
+let mines = []
 
-function incrementFlag() {
+function setMines() {
     
-}
+    for (i = 0; i < 10; i++) {
+        let x = Math.floor(Math.random() * 8) +1;
+        let y = Math.floor(Math.random() * 8) +1;
+        let location = [x, y];
+        mines.push(location)
+    }
+    console.log(mines)
+} 
 
 function revealTile(event) {
     event.preventDefault();
     alert ("you left clicked the div");
 }
 
+
+// adds or removes flag to current tile 
+//decrements and increments flag counter
 function markTile(event) {
     event.preventDefault();
     const currentImg = this.querySelector("img");
