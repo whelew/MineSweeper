@@ -13,11 +13,15 @@ function loadBoard(event) {
             populateGameBoard(8, 8, "easy-board");
             break;
         case "normal":
-            levelSelect.innerHTML = `<div class="game-board" id="normal-board"></div>`
+            levelSelect.innerHTML = `
+            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">20</span></p>
+            <div class="game-board" id="normal-board"></div>`
             populateGameBoard(12, 12, "normal-board");
             break; 
         case "hard":
-            levelSelect.innerHTML = `<div class="game-board" id="hard-board"></div>`
+            levelSelect.innerHTML = `
+            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">30</span></p>
+            <div class="game-board" id="hard-board"></div>`
             populateGameBoard(12, 20, "hard-board");
             break;
         case "leader-board":
