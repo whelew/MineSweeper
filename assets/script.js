@@ -59,17 +59,17 @@ function revealTile(event) {
 function markTile(event) {
     event.preventDefault();
     
-    if (this.querySelector("img") === null) {
+    const currentImg = this.querySelector("img");
+
+    if (currentImg === null) {
         let flagImg = document.createElement("img");
         flagImg.setAttribute("src", "assets/images/flag.png");
         flagImg.id = "flag";
         flagImg.setAttribute("width", "70%");
         flagImg.setAttribute("height", "70%");
-        
-    
         this.appendChild(flagImg);
     }  else {
-        this.remove();
+        this.removeChild(currentImg);
     }
 }
 
