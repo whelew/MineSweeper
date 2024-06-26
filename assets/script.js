@@ -127,8 +127,6 @@ function markTile(event) {
 
     if (this.classList.contains("revealed")) {
         return;         
-    } else if (this.classList.contains("revealed", "mine-tile")) {
-        return;
     } 
     
     if (currentImg === null) {
@@ -240,10 +238,29 @@ function checkNum() {
 }
 
 function gameOver() {
-    
+    let gameOverDisplay = document.createElement("div");
+    gameOverDisplay.id = "game-over-display";
+    gameOverDisplay.innerHTML = `
+    <div id = "game-over-menu">
+    <p>Game Over!</p>
+    <br>
+    <button class="menu-button" id="main-menu">Main Menu</button>
+    <button class="menu-button" id="r-button">Restart</button>
+    <button class="menu-button" id="leader-board">Leader Board</button>
+    </div>
+    `
+    document.body.appendChild(gameOverDisplay)
+
+    let restart = document.getElementById("r-button");
+    restart.addEventListener("click", restartGame)
 }
+
+function winGame() {
+
+}
+
 
 // will restart the current game
 function restartGame() {
-
+    alert ("you clicked restart")
 }
