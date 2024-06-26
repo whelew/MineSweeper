@@ -76,12 +76,17 @@ function revealTile(event) {
     const [row, col] = currentTileId.split("-").map(Number); //map.Number to change string into number
 
     if (mines.some(mine => mine[0] === row && mine[1] === col)) {
-        alert ("you hit a mine");
+        let mineImg = document.createElement("img");
+        mineImg.setAttribute("src", "assets/images/mine.png");
+        mineImg.id = "mine-pressed";
+        mineImg.setAttribute("width", "70%");
+        mineImg.setAttribute("height", "70%");
+        this.appendChild(mineImg);
+        setTimeout(gameOver(), 2000)
     } else {
         alert ("you clicked a safe tile");
     }
 }
-
 
 // adds or removes flag to current tile 
 //decrements and increments flag counter
@@ -113,4 +118,8 @@ function checkTile() {
 // will restart the current game
 function restartGame() {
 
+}
+
+function gameOver() {
+    alert ("Game Over, Click Restart to try again")
 }

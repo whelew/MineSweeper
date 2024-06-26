@@ -41,6 +41,14 @@ body {
     align-items: center;
 }
 
+.game-board :hover {
+    background-color: aquamarine;
+}
+
+/* .game-board :onclick {
+    background-color: aquamarine;
+} */
+
 #easy-board {
     width: 400px;
     height: 400px;
@@ -88,6 +96,3 @@ body {
     color: burlywood;
 }
 
-.game-board :hover {
-    background-color: aquamarine;
-}
