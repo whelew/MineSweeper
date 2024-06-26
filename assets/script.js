@@ -86,7 +86,9 @@ function revealTile(event) {
         this.appendChild(mineImg);
         setTimeout(gameOver, 2000) // calls gameover function after 2 second delay
     } else {
-        alert ("safe tile")
+        const minesDeteced = checkTile(row, col);
+        this.innerText = minesDeteced;
+        checkNum.call(this);
     }
 }
 
@@ -112,14 +114,53 @@ function markTile(event) {
 }
 
 // will check if tile revealed has a mine on the location
-function checkTile() {
+function checkTile(row, col) {
+    const direction = 
+    [[1, 1], [1, -1], [1, 0], //checks bottom row
+    [-1, 1], [-1, 0], [-1, -1], //checks top row
+    [0, 1], [0, -1],]; //checks middle row
+    
+    let mineCount = 0;
+
+    for (let [dx, dy] of direction) {
+        let newRow = row + dx;
+        let newCol = col + dy;
         
+        if (newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8) {
+            if (mines.some(mine => mine[0] === newRow && mine[1] === newCol)) {
+                mineCount++;
+            }
+        }
+    }
+    return mineCount;
 }
 
 
 // will restart the current game
 function restartGame() {
 
+}
+
+function checkNum() {
+    const innerNum = parseInt(this.innerText)
+
+    if (innerNum === 1) {
+        this.classList.add("number-one") 
+    } else if (innerNum === 2) {
+        this.classList.add("number-two")
+    } else if (innerNum === 3) {
+        this.classList.add("number-three")
+    } else if (innerNum === 4) {
+        this.classList.add("number-four")
+    } else if (innerNum === 5) {
+        this.classList.add("number-five")
+    } else if (innerNum === 6) {
+        this.classList.add("number-six")
+    } else if (innerNum === 7) {
+        this.classList.add("number-seven")
+    } else if (innerNum === 8) {
+        this.classList.add("number-eight")
+    }
 }
 
 function gameOver() {
