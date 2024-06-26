@@ -139,6 +139,19 @@ function markTile(event) {
 
 // will check if tile revealed has a mine on the location
 function checkTile(row, col) {
+    let gameRow;
+    let gameColumn;
+
+    if (document.getElementById("easy-board")) {
+        gameRow = 8;
+        gameColumn = 8
+    } else if (document.getElementById("normal-board")) {
+        gameRow = 12;
+        gameColumn = 12;
+    } else if (document.getElementById("hard-board")) {
+        gameRow = 12;
+        gameColumn = 20;
+    }
     const direction = 
     [[1, 1], [1, -1], [1, 0], //checks bottom row
     [-1, 1], [-1, 0], [-1, -1], //checks top row
@@ -150,7 +163,7 @@ function checkTile(row, col) {
         let newRow = row + dx;
         let newCol = col + dy;
         
-        if (newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8) {
+        if (newRow >= 0 && newRow < gameRow && newCol >= 0 && newCol < gameColumn) {
             if (mines.some(mine => mine[0] === newRow && mine[1] === newCol)) {
                 mineCount++;
             } 
@@ -160,6 +173,20 @@ function checkTile(row, col) {
 }
 
 function revealOtherTiles (row, col) {
+    let gameRow;
+    let gameColumn;
+
+    if (document.getElementById("easy-board")) {
+        gameRow = 8;
+        gameColumn = 8
+    } else if (document.getElementById("normal-board")) {
+        gameRow = 12;
+        gameColumn = 12;
+    } else if (document.getElementById("hard-board")) {
+        gameRow = 12;
+        gameColumn = 20;
+    }
+
     const direction = 
     [[1, 1], [1, -1], [1, 0], // Checks bottom row
     [-1, 1], [-1, 0], [-1, -1], // Checks top row
@@ -169,13 +196,13 @@ function revealOtherTiles (row, col) {
         let newRow = row + dx;
         let newCol = col + dy;
 
-        if (newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8) {
+        if (newRow >= 0 && newRow < gameRow && newCol >= 0 && newCol < gameColumn) {
             let tile = document.getElementById(newRow + "-" + newCol);
             if (!tile.classList.contains("revealed")) {
                 tile.click();
             }
-        }
-    }   
+        }   
+    }
 }
 
 
