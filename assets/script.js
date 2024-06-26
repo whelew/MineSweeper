@@ -7,7 +7,7 @@ function loadBoard(event) {
     switch (event.target.id) {
         case "easy":
             levelSelect.innerHTML = `
-            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">20</span></p>
+            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">15</span></p>
             <div class="game-board" id="easy-board"></div>
             `
             populateGameBoard(8, 8, "easy-board");
@@ -59,11 +59,11 @@ function populateGameBoard(rows, columns, boardId) {
 let mines = []
 // pushes a number of coordinates into an array
 function setMines(numMines, rows, columns) {
-    mines = [] //resets array 
-
+    mines = [] //resets array
+    
     for (let i = 0; i < numMines; i++) {
-        let x = Math.floor(Math.random() * 8);
-        let y = Math.floor(Math.random() * 8);
+        let x = Math.floor(Math.random() * rows);
+        let y = Math.floor(Math.random() * columns);
         let location = [x, y];
         if (!mines.some(mine => mine[0] === x && mine[1] === y)) { //avoid duplicate mines
             mines.push(location)   
@@ -153,14 +153,14 @@ function checkTile(row, col) {
         if (newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8) {
             if (mines.some(mine => mine[0] === newRow && mine[1] === newCol)) {
                 mineCount++;
-            }
+            } 
         }
     }
     return mineCount;
 }
 
-function revealOtherTiles () {
-   alert ("tile is safe")
+function revealOtherTiles (row, col) {
+   
 }
 
 
@@ -189,7 +189,7 @@ function checkNum() {
 }
 
 function gameOver() {
-    alert ("Game Over, Click Restart to try again")
+    
 }
 
 // will restart the current game
