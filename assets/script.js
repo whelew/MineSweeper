@@ -82,9 +82,9 @@ function revealTile(event) {
         mineImg.setAttribute("width", "70%");
         mineImg.setAttribute("height", "70%");
         this.appendChild(mineImg);
-        setTimeout(gameOver(), 2000)
+        setTimeout(gameOver, 2000) // calls gameover function after 2 second delay
     } else {
-        alert ("you clicked a safe tile");
+        alert ("safe tile")
     }
 }
 
