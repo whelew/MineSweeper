@@ -11,7 +11,7 @@ function loadBoard(event) {
             <div class="game-board" id="easy-board"></div>
             `
             populateGameBoard(8, 8, "easy-board");
-            setMines(20, 8, 8);
+            setMines(15, 8, 8);
             break;
         case "normal":
             levelSelect.innerHTML = `
@@ -88,7 +88,8 @@ function revealTile(event) {
     } else {
         const minesDeteced = checkTile(row, col);
         this.innerText = minesDeteced;
-        checkNum.call(this);
+        this.classList.add("revealed")
+        checkNum.call(this); //changes innerText font color based on number
     }
 }
 
@@ -160,6 +161,8 @@ function checkNum() {
         this.classList.add("number-seven")
     } else if (innerNum === 8) {
         this.classList.add("number-eight")
+    } else if (innerNum === 0) {
+        this.innerText = ""
     }
 }
 

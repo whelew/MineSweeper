@@ -45,6 +45,10 @@ body {
     background-color: aquamarine;
 }
 
+.revealed {
+  background-color: darkgray;  
+}
+
 /* .game-board :onclick {
     background-color: aquamarine;
 } */
