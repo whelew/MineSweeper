@@ -12,6 +12,7 @@ function loadBoard(event) {
             `
             populateGameBoard(8, 8, "easy-board");
             setMines(15, 8, 8);
+            setMineId();
             break;
         case "normal":
             levelSelect.innerHTML = `
@@ -63,14 +64,30 @@ function setMines(numMines, rows, columns) {
         let y = Math.floor(Math.random() * 8);
         let location = [x, y];
         if (!mines.some(mine => mine[0] === x && mine[1] === y)) { //avoid duplicate mines
-            mines.push(location)    
+            mines.push(location)   
         } else {
             i--;
         }
     }
     console.log(mines)
-} 
+}
 
+function setMineId() {
+    let mineTile = document.getElementsByClassName("game-tile");
+    let mineArray = []
+    
+    for (i = 0; i < mineTile.length; i++) {
+        let mineTileId = mineTile[i].id
+        let [row, col] = mineTileId.split("-").map(Number);
+        mineArray.push([row, col]);
+
+        if (mines.some(mine => mine[0] === row && mine[1] === col)) {
+            mineTile[i].classList.add("mine-tile");
+        }
+    }
+}
+
+//mineTile[i].classList.add("mine-tile") // mineArray.push([row, col]);
 
 // will reveal hidden tile
 function revealTile(event) {
@@ -92,7 +109,7 @@ function revealTile(event) {
         checkNum.call(this); //changes innerText font color based on number
 
         if (minesDeteced === 0) {
-            alert ("it is equal to 0")
+            revealOtherTiles();
         }
     }
 }
@@ -140,11 +157,10 @@ function checkTile(row, col) {
     return mineCount;
 }
 
-
-// will restart the current game
-function restartGame() {
-
+function revealOtherTiles () {
+   alert ("tile is safe")
 }
+
 
 function checkNum() {
     const innerNum = parseInt(this.innerText)
@@ -170,10 +186,11 @@ function checkNum() {
     }
 }
 
-function revealOtherTiles () {
-
-}
-
 function gameOver() {
     alert ("Game Over, Click Restart to try again")
+}
+
+// will restart the current game
+function restartGame() {
+
 }
