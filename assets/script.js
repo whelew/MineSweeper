@@ -122,7 +122,15 @@ function markTile(event) {
     event.preventDefault();
     const currentImg = this.querySelector("img");
     var flagCounter = parseInt(document.getElementById("count").innerText)
+    let currentTile = this.className;
+    let revealedTile = document.getElementsByClassName("revealed");
 
+    if (this.classList.contains("revealed")) {
+        return;         
+    } else if (this.classList.contains("revealed", "mine-tile")) {
+        return;
+    } 
+    
     if (currentImg === null) {
         let flagImg = document.createElement("img");
         flagImg.setAttribute("src", "assets/images/flag.png");
@@ -135,6 +143,7 @@ function markTile(event) {
         this.removeChild(currentImg);
         document.getElementById("count").innerText = ++flagCounter
     }
+    
 }
 
 // will check if tile revealed has a mine on the location
