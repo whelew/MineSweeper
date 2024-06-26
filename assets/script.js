@@ -103,7 +103,7 @@ function revealTile(event) {
         mineImg.setAttribute("width", "70%");
         mineImg.setAttribute("height", "70%");
         this.appendChild(mineImg);
-        setTimeout(gameOver, 2000) // calls gameover function after 2 second delay
+        gameOver() // calls gameover function after 2 second delay
     } else {
         const minesDeteced = checkTile(row, col);
         this.innerText = minesDeteced;
@@ -253,6 +253,9 @@ function gameOver() {
 
     let restart = document.getElementById("r-button");
     restart.addEventListener("click", restartGame)
+
+    let mainMenu = document.getElementById("main-menu")
+    mainMenu.addEventListener("click", returnToMenu)
 }
 
 function winGame() {
@@ -282,5 +285,8 @@ function restartGame() {
         let event = { target: { id: "hard"} }
         loadBoard(event);
     }
+}
 
+function returnToMenu () {
+    location.reload();
 }
