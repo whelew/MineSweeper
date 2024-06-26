@@ -7,7 +7,8 @@ function loadBoard(event) {
     switch (event.target.id) {
         case "easy":
             levelSelect.innerHTML = `
-            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">10</span></p>
+            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">10</span>
+            Timer:<span id="timer">0</span></p>
             <div class="game-board" id="easy-board"></div>
             `
             populateGameBoard(8, 8, "easy-board");
@@ -16,7 +17,8 @@ function loadBoard(event) {
             break;
         case "normal":
             levelSelect.innerHTML = `
-            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">30</span></p>
+            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">30</span>
+            Timer:<span id="timer">0</span></p>
             <div class="game-board" id="normal-board"></div>`
             populateGameBoard(12, 12, "normal-board");
             setMines(30, 12, 12);
@@ -24,7 +26,8 @@ function loadBoard(event) {
             break; 
         case "hard":
             levelSelect.innerHTML = `
-            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">50</span></p>
+            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">50</span>
+            Timer:<span id="timer">0</span></p>
             <div class="game-board" id="hard-board"></div>`
             populateGameBoard(12, 20, "hard-board");
             setMines(50, 12, 20);
