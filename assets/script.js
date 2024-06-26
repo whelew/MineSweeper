@@ -7,11 +7,11 @@ function loadBoard(event) {
     switch (event.target.id) {
         case "easy":
             levelSelect.innerHTML = `
-            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">15</span></p>
+            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">10</span></p>
             <div class="game-board" id="easy-board"></div>
             `
             populateGameBoard(8, 8, "easy-board");
-            setMines(15, 8, 8);
+            setMines(10, 8, 8);
             setMineId();
             break;
         case "normal":
@@ -111,7 +111,7 @@ function revealTile(event) {
         checkNum.call(this); //changes innerText font color based on number
 
         if (minesDeteced === 0) {
-            revealOtherTiles();
+            revealOtherTiles(row, col);
         }
     }
 }
@@ -160,7 +160,22 @@ function checkTile(row, col) {
 }
 
 function revealOtherTiles (row, col) {
-   
+    const direction = 
+    [[1, 1], [1, -1], [1, 0], // Checks bottom row
+    [-1, 1], [-1, 0], [-1, -1], // Checks top row
+    [0, 1], [0, -1],]; // Checks middle row
+    
+    for (let [dx, dy] of direction) {
+        let newRow = row + dx;
+        let newCol = col + dy;
+
+        if (newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8) {
+            let tile = document.getElementById(newRow + "-" + newCol);
+            if (!tile.classList.contains("revealed")) {
+                tile.click();
+            }
+        }
+    }   
 }
 
 
