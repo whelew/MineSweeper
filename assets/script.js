@@ -20,6 +20,7 @@ function loadBoard(event) {
             <div class="game-board" id="normal-board"></div>`
             populateGameBoard(12, 12, "normal-board");
             setMines(30, 12, 12);
+            setMineId()
             break; 
         case "hard":
             levelSelect.innerHTML = `
@@ -27,6 +28,7 @@ function loadBoard(event) {
             <div class="game-board" id="hard-board"></div>`
             populateGameBoard(12, 20, "hard-board");
             setMines(50, 12, 20);
+            setMineId()
             break;
         case "leader-board":
             alert ("You clicked the leaderboard button");
