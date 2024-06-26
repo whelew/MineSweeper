@@ -262,5 +262,25 @@ function winGame() {
 
 // will restart the current game
 function restartGame() {
-    alert ("you clicked restart")
+    let eBoard = document.getElementById("easy-board");
+    let nBoard = document.getElementById("normal-board");
+    let hBoard = document.getElementById("hard-board");
+    let mBoard = document.getElementById("menu");
+    //removes gameover display
+    let gameOverDisplay = document.getElementById("game-over-menu");
+    if (gameOverDisplay) {
+       gameOverDisplay.remove();
+    }
+
+    if (mBoard.contains(eBoard)) {
+        let event = { target: { id: "easy"} }
+        loadBoard(event);
+    } else if (mBoard.contains(nBoard)) {
+        let event = { target: { id: "normal"} }
+        loadBoard(event);
+    } else if (mBoard.contains(hBoard)) {
+        let event = { target: { id: "hard"} }
+        loadBoard(event);
+    }
+
 }
