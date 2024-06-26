@@ -7,23 +7,25 @@ function loadBoard(event) {
     switch (event.target.id) {
         case "easy":
             levelSelect.innerHTML = `
-            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">10</span></p>
+            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">20</span></p>
             <div class="game-board" id="easy-board"></div>
             `
             populateGameBoard(8, 8, "easy-board");
-            setMines();
+            setMines(20, 8, 8);
             break;
         case "normal":
             levelSelect.innerHTML = `
-            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">20</span></p>
+            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">30</span></p>
             <div class="game-board" id="normal-board"></div>`
             populateGameBoard(12, 12, "normal-board");
+            setMines(30, 12, 12);
             break; 
         case "hard":
             levelSelect.innerHTML = `
-            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">30</span></p>
+            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">50</span></p>
             <div class="game-board" id="hard-board"></div>`
             populateGameBoard(12, 20, "hard-board");
+            setMines(50, 12, 20);
             break;
         case "leader-board":
             alert ("You clicked the leaderboard button");
@@ -53,10 +55,10 @@ function populateGameBoard(rows, columns, boardId) {
 
 let mines = []
 // pushes a number of coordinates into an array
-function setMines() {
-    mines = [] //resets array
+function setMines(numMines, rows, columns) {
+    mines = [] //resets array 
 
-    for (i = 0; i < 10; i++) {
+    for (let i = 0; i < numMines; i++) {
         let x = Math.floor(Math.random() * 8);
         let y = Math.floor(Math.random() * 8);
         let location = [x, y];
@@ -111,7 +113,7 @@ function markTile(event) {
 
 // will check if tile revealed has a mine on the location
 function checkTile() {
-    
+        
 }
 
 
