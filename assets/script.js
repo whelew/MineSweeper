@@ -90,6 +90,10 @@ function revealTile(event) {
         this.innerText = minesDeteced;
         this.classList.add("revealed")
         checkNum.call(this); //changes innerText font color based on number
+
+        if (minesDeteced === 0) {
+            alert ("it is equal to 0")
+        }
     }
 }
 
@@ -164,6 +168,10 @@ function checkNum() {
     } else if (innerNum === 0) {
         this.innerText = ""
     }
+}
+
+function revealOtherTiles () {
+
 }
 
 function gameOver() {
