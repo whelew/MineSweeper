@@ -14,6 +14,7 @@ function loadBoard(event) {
             populateGameBoard(8, 8, "easy-board");
             setMines(10, 8, 8);
             setMineId();
+            startTimer();
             break;
         case "normal":
             levelSelect.innerHTML = `
@@ -107,6 +108,7 @@ function revealTile(event) {
         mineImg.setAttribute("height", "70%");
         this.appendChild(mineImg);
         gameOver() // calls gameover function after 2 second delay
+        stopTimer();
     } else {
         const minesDeteced = checkTile(row, col);
         this.innerText = minesDeteced;
@@ -292,4 +294,26 @@ function restartGame() {
 
 function returnToMenu () {
     location.reload();
+}
+
+let timerInterval;
+
+function incrementTimer () {
+    var timerEle = document.getElementById("timer");
+    var currentTime = parseInt(document.getElementById("timer").innerText)
+    timerEle.innerText = currentTime + 1;   
+}
+
+function startTimer() {
+if (!timerInterval) {
+    timerInterval = setInterval(incrementTimer, 1000);
+}
+}
+
+function stopTimer() {
+if (timerInterval) {
+    console.log(timerInterval)
+    clearInterval(timerInterval);
+    timerInterval = 0;
+}
 }
