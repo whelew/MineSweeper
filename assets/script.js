@@ -103,12 +103,14 @@ function revealTile(event) {
     const currentTileId = event.target.id;
     const [row, col] = currentTileId.split("-").map(Number); //map.Number to change string into number
     let anyImg = document.getElementsByTagName("img");
+    let gameOverMenu = document.getElementById("game-over-menu")
 
     if (currentTileId === "flag" || currentTileId === "mine-pressed") {
         return;
     }
 
     if (mines.some(mine => mine[0] === row && mine[1] === col)) {
+        removeAllFlags();
         revealAllMines();
         setTimeout(gameOver, 2000); // calls gameover function after 2 second delay
         stopTimer();
@@ -129,7 +131,6 @@ function revealTile(event) {
 //reveals allmines when one mine is clicked
 function revealAllMines() {
     let allMines = document.getElementsByClassName("mine-tile");
-    let flagImg = document.getElementById("flag");
     
     for (let i = 0; i < allMines.length; i++) {
         let mineImg = document.createElement("img");
@@ -137,6 +138,17 @@ function revealAllMines() {
         mineImg.id = "mine-pressed";
         allMines[i].classList.add("revealed-mine");
         allMines[i].appendChild(mineImg);
+    }
+}
+
+function removeAllFlags() {
+    let allTiles = document.getElementsByClassName("mine-tile");
+    
+    for (let a = 0; a < allTiles.length; a++) {
+        let allFlags = allTiles[a].getElementsByClassName("flag-tile");
+        while (allFlags.length > 0) {
+            allTiles[a].removeChild(allFlags[0])
+        }
     }
 }
 
@@ -157,6 +169,7 @@ function markTile(event) {
         let flagImg = document.createElement("img");
         flagImg.setAttribute("src", "assets/images/flag.png");
         flagImg.id = "flag";
+        flagImg.classList.add("flag-tile")
         this.appendChild(flagImg);
         document.getElementById("count").innerText = --flagCounter
     }  else {
