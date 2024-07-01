@@ -24,6 +24,7 @@ function loadBoard(event) {
             populateGameBoard(12, 12, "normal-board");
             setMines(30, 12, 12);
             setMineId()
+            startTimer();
             break; 
         case "hard":
             levelSelect.innerHTML = `
@@ -33,6 +34,7 @@ function loadBoard(event) {
             populateGameBoard(12, 20, "hard-board");
             setMines(50, 12, 20);
             setMineId()
+            startTimer();
             break;
         case "leader-board":
             alert ("You clicked the leaderboard button");
