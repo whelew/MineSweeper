@@ -45,6 +45,15 @@ body {
     background-color: aquamarine;
 }
 
+#game-over-menu {
+    position: absolute;
+    border: 3px, solid, black;
+    background: dimgray;
+    width: 20%;
+    left: 39.9%;
+    top: 20%;
+}
+
 .revealed {
   background-color: darkgray;  
 }
