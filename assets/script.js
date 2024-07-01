@@ -117,7 +117,7 @@ function revealTile(event) {
         }
     }
 
-    winGame();
+    setTimeout(winGame, 1500);
 }
 
 function revealAllMines() {
