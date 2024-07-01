@@ -116,6 +116,8 @@ function revealTile(event) {
             revealOtherTiles(row, col);
         }
     }
+
+    winGame();
 }
 
 function revealAllMines() {
@@ -273,7 +275,24 @@ function gameOver() {
 }
 
 function winGame() {
+    let revealedTiles = document.getElementsByClassName("revealed").length;
+    let eBoard = document.getElementById("easy-board");
+    let nBoard = document.getElementById("normal-board");
+    let hBoard = document.getElementById("hard-board");
+    let mBoard = document.getElementById("menu");
+    let safeTiles = 0;
 
+    if (mBoard.contains(eBoard)) {
+        safeTiles = 54;  
+    } else if (mBoard.contains(nBoard)) {
+        safeTiles = 114
+    } else if (mBoard.contains(hBoard)) {
+        safeTiles = 174
+    }
+
+    if (revealedTiles === safeTiles) {
+        (alert("you win"))
+    }
 }
 
 
