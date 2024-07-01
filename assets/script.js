@@ -102,7 +102,7 @@ function revealTile(event) {
 
     if (mines.some(mine => mine[0] === row && mine[1] === col)) {
         let mineImg = document.createElement("img");
-        mineImg.setAttribute("src", "assets/images/Mine.png");
+        mineImg.setAttribute("src", "assets/images/mine.png");
         mineImg.id = "mine-pressed";
         mineImg.setAttribute("width", "70%");
         mineImg.setAttribute("height", "70%");
