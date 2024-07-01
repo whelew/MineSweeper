@@ -102,6 +102,11 @@ function setMineId() {
 function revealTile(event) {
     const currentTileId = event.target.id;
     const [row, col] = currentTileId.split("-").map(Number); //map.Number to change string into number
+    let anyImg = document.getElementsByTagName("img");
+
+    if (currentTileId === "flag" || currentTileId === "mine-pressed") {
+        return
+    }
 
     if (mines.some(mine => mine[0] === row && mine[1] === col)) {
         revealAllMines();
@@ -126,16 +131,11 @@ function revealAllMines() {
     let allMines = document.getElementsByClassName("mine-tile");
     let flagImg = document.getElementById("flag");
     
-
     for (let i = 0; i < allMines.length; i++) {
         let mineImg = document.createElement("img");
         mineImg.setAttribute("src", "assets/images/mine.png");
         mineImg.id = "mine-pressed";
         allMines[i].classList.add("revealed-mine");
-        if (allMines[i].contains(flagImg)) {
-            allMines[i].replaceChild(mineImg, flagImg);
-        } 
-        
         allMines[i].appendChild(mineImg);
     }
 }
