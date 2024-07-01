@@ -80,6 +80,7 @@ function setMines(numMines, rows, columns) {
     console.log(mines)
 }
 
+//sets Id of div to mine-tile if it contains a mine
 function setMineId() {
     let mineTile = document.getElementsByClassName("game-tile");
     let mineArray = []
@@ -120,6 +121,7 @@ function revealTile(event) {
     setTimeout(winGame, 1500);
 }
 
+//reveals allmines when one mine is clicked
 function revealAllMines() {
     let allMines = document.getElementsByClassName("mine-tile");
     
@@ -195,6 +197,8 @@ function checkTile(row, col) {
     return mineCount;
 }
 
+//reveals other tiles that are empty close to
+//current tile revealed
 function revealOtherTiles (row, col) {
     let gameRow;
     let gameColumn;
@@ -228,7 +232,8 @@ function revealOtherTiles (row, col) {
     }
 }
 
-
+//changes inner text color of tile divs to
+//match specific number of mines around tile
 function checkNum() {
     const innerNum = parseInt(this.innerText)
 
@@ -253,6 +258,7 @@ function checkNum() {
     }
 }
 
+//inserts game over menu on top of the game board
 function gameOver() {
     let gameOverDisplay = document.createElement("div");
     gameOverDisplay.id = "game-over-display";
@@ -274,6 +280,8 @@ function gameOver() {
     mainMenu.addEventListener("click", returnToMenu)
 }
 
+//checks whether you have revealed all safe tiles
+//if so, you win the game
 function winGame() {
     let revealedTiles = document.getElementsByClassName("revealed").length;
     let eBoard = document.getElementById("easy-board");
@@ -320,24 +328,28 @@ function restartGame() {
     }
 }
 
+//refreshes the page to homescreen
 function returnToMenu () {
     location.reload();
 }
 
 let timerInterval;
 
+//sets the rule for timer
 function incrementTimer () {
     var timerEle = document.getElementById("timer");
     var currentTime = parseInt(document.getElementById("timer").innerText)
     timerEle.innerText = currentTime + 1;   
 }
 
+//increments timer by one every second
 function startTimer() {
 if (!timerInterval) {
     timerInterval = setInterval(incrementTimer, 1000);
 }
 }
 
+//stops the timer and logs timer score to console
 function stopTimer() {
 if (timerInterval) {
     console.log(timerInterval)
