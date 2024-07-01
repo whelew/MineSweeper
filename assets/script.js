@@ -110,6 +110,7 @@ function revealTile(event) {
     }
 
     if (mines.some(mine => mine[0] === row && mine[1] === col)) {
+        disableListener();
         removeAllFlags();
         revealAllMines();
         setTimeout(gameOver, 2000); // calls gameover function after 2 second delay
@@ -128,6 +129,12 @@ function revealTile(event) {
     setTimeout(winGame, 1500);
 }
 
+function disableListener() {
+    const allTiles = document.querySelectorAll(".game-tile");
+
+    allTiles.forEach(allTiles => allTiles.removeEventListener("click", revealTile))
+}
+
 //reveals allmines when one mine is clicked
 function revealAllMines() {
     let allMines = document.getElementsByClassName("mine-tile");
@@ -141,6 +148,7 @@ function revealAllMines() {
     }
 }
 
+//removes all flags from minetiles when mines are revealed
 function removeAllFlags() {
     let allTiles = document.getElementsByClassName("mine-tile");
     
@@ -288,13 +296,13 @@ function gameOver() {
     <button class="menu-button" id="leader-board">Leader Board</button>
     </div>
     `
-    document.body.appendChild(gameOverDisplay)
+    document.body.appendChild(gameOverDisplay);
 
     let restart = document.getElementById("r-button");
-    restart.addEventListener("click", restartGame)
+    restart.addEventListener("click", restartGame);
 
-    let mainMenu = document.getElementById("main-menu")
-    mainMenu.addEventListener("click", returnToMenu)
+    let mainMenu = document.getElementById("main-menu");
+    mainMenu.addEventListener("click", returnToMenu);
 }
 
 //checks whether you have revealed all safe tiles
