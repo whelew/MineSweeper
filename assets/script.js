@@ -107,7 +107,7 @@ function revealTile(event) {
         mineImg.setAttribute("width", "70%");
         mineImg.setAttribute("height", "70%");
         this.appendChild(mineImg);
-        gameOver() // calls gameover function after 2 second delay
+        setTimeout(gameOver, 2000) // calls gameover function after 2 second delay
         stopTimer();
     } else {
         const minesDeteced = checkTile(row, col);
