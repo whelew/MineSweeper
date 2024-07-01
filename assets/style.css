@@ -46,7 +46,16 @@ body {
 }
 
 .revealed {
-  background-color: darkgray;  
+    background-color: darkgray;  
+}
+
+.revealed-mine {
+    background-color: dimgray;  
+}
+
+#mine-pressed {
+    width: 70%;
+    height: 70%;
 }
 
 /* .game-board :onclick {

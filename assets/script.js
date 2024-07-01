@@ -101,15 +101,10 @@ function revealTile(event) {
     const [row, col] = currentTileId.split("-").map(Number); //map.Number to change string into number
 
     if (mines.some(mine => mine[0] === row && mine[1] === col)) {
-        let mineImg = document.createElement("img");
-        mineImg.setAttribute("src", "assets/images/mine.png");
-        mineImg.id = "mine-pressed";
-        mineImg.setAttribute("width", "70%");
-        mineImg.setAttribute("height", "70%");
-        this.appendChild(mineImg);
-        setTimeout(gameOver, 2000) // calls gameover function after 2 second delay
+        revealAllMines();
+        setTimeout(gameOver, 2000); // calls gameover function after 2 second delay
         stopTimer();
-    } else {
+    } else { 
         const minesDeteced = checkTile(row, col);
         this.innerText = minesDeteced;
         this.classList.add("revealed")
@@ -118,6 +113,18 @@ function revealTile(event) {
         if (minesDeteced === 0) {
             revealOtherTiles(row, col);
         }
+    }
+}
+
+function revealAllMines() {
+    let allMines = document.getElementsByClassName("mine-tile");
+    
+    for (let i = 0; i < allMines.length; i++) {
+        let mineImg = document.createElement("img");
+        mineImg.setAttribute("src", "assets/images/mine.png");
+        mineImg.id = "mine-pressed";
+        allMines[i].classList.add("revealed-mine");
+        allMines[i].appendChild(mineImg)
     }
 }
 
