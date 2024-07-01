@@ -124,13 +124,19 @@ function revealTile(event) {
 //reveals allmines when one mine is clicked
 function revealAllMines() {
     let allMines = document.getElementsByClassName("mine-tile");
+    let flagImg = document.getElementById("flag");
     
+
     for (let i = 0; i < allMines.length; i++) {
         let mineImg = document.createElement("img");
         mineImg.setAttribute("src", "assets/images/mine.png");
         mineImg.id = "mine-pressed";
         allMines[i].classList.add("revealed-mine");
-        allMines[i].appendChild(mineImg)
+        if (allMines[i].contains(flagImg)) {
+            allMines[i].replaceChild(mineImg, flagImg);
+        } 
+        
+        allMines[i].appendChild(mineImg);
     }
 }
 
