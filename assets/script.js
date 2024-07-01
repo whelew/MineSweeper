@@ -105,7 +105,7 @@ function revealTile(event) {
     let anyImg = document.getElementsByTagName("img");
 
     if (currentTileId === "flag" || currentTileId === "mine-pressed") {
-        return
+        return;
     }
 
     if (mines.some(mine => mine[0] === row && mine[1] === col)) {
@@ -157,8 +157,6 @@ function markTile(event) {
         let flagImg = document.createElement("img");
         flagImg.setAttribute("src", "assets/images/flag.png");
         flagImg.id = "flag";
-        flagImg.setAttribute("width", "70%");
-        flagImg.setAttribute("height", "70%");
         this.appendChild(flagImg);
         document.getElementById("count").innerText = --flagCounter
     }  else {

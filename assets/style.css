@@ -54,8 +54,13 @@ body {
 }
 
 #mine-pressed {
-    width: 70%;
-    height: 70%;
+    width: 90%;
+    height: 90%;
+}
+
+#flag {
+    width: 75%;
+    height: 75%;
 }
 
 /* .game-board :onclick {
