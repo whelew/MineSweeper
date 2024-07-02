@@ -416,7 +416,7 @@ function displayWinMenu() {
     <br>
     <p>Your Score:<span id="score-value">0</span></P>
     <br>
-    <input type="submit" value="submit score">
+    <input type="submit" value="submit score" id="submit-btn">
     </div>
     `
     document.body.appendChild(winDisplay);
@@ -428,4 +428,15 @@ function calculateScore() {
     console.log(currentValue)
     let scoreValue = document.getElementById("score-value")
     scoreValue.innerText = currentValue;
+
+    let submitBtn = document.getElementById("submit-btn");
+    submitBtn.addEventListener("click", submitScore)    
+}
+
+function submitScore() {
+    let nameV = document.getElementById("fname").value;
+    let scoreV = document.getElementById("score-value").innerText;
+    localStorage.setItem("name", nameV);
+    localStorage.setItem("score-value", scoreV);
+    window.location.href = "score.html"
 }
