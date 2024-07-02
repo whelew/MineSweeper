@@ -313,7 +313,7 @@ function gameOver() {
     restart.addEventListener("click", restartGame);
 
     let mainMenu = document.getElementById("main-menu");
-    mainMenu.addEventListener("click", returnToMenu);
+    mainMenu.addEventListener("click", loadMainMenu);
 }
 
 //checks whether you have revealed all safe tiles
