@@ -314,6 +314,9 @@ function gameOver() {
 
     let mainMenu = document.getElementById("main-menu");
     mainMenu.addEventListener("click", loadMainMenu);
+
+    let leaderB = document.getElementById("leader-board");
+    leaderB.addEventListener("click", loadLBoard)
 }
 
 //checks whether you have revealed all safe tiles
@@ -390,11 +393,6 @@ if (timerInterval) {
     clearInterval(timerInterval);
     timerInterval = 0;
 }
-}
-
-//refreshes the page to homescreen
-function returnToMenu () {
-    location.reload();
 }
 
 function loadLBoard() {
