@@ -337,7 +337,8 @@ function winGame() {
     if (revealedTiles === safeTiles) {
         disableListener("click", revealTile)
         stopTimer();
-        (alert("you win"))
+        displayWinMenu();
+        calculateScore();
     }
 }
 
@@ -402,4 +403,29 @@ function loadLBoard() {
 
 function loadMainMenu() {
     window.location = "index.html";
+}
+
+function displayWinMenu() {
+    let winDisplay = document.createElement("div");
+    winDisplay.id = "win-display";
+    winDisplay.innerHTML = `
+    <div id = "win-menu">
+    <p>Congratulations You Win!</p>
+    <br>
+    <input type="text" id="fname" name="fname" value="Name...">
+    <br>
+    <p>Your Score:<span id="score-value">0</span></P>
+    <br>
+    <input type="submit" value="submit score">
+    </div>
+    `
+    document.body.appendChild(winDisplay);
+}
+
+function calculateScore() {
+    let currentTime = document.getElementById("timer");
+    let currentValue = currentTime.textContent;
+    console.log(currentValue)
+    let scoreValue = document.getElementById("score-value")
+    scoreValue.innerText = currentValue;
 }
