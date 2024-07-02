@@ -439,4 +439,5 @@ function submitScore() {
     localStorage.setItem("name", nameV);
     localStorage.setItem("score-value", scoreV);
     window.location.href = "score.html"
+    loadLBoard();
 }
