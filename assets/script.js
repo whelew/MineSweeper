@@ -37,7 +37,7 @@ function loadBoard(event) {
             startTimer();
             break;
         case "leader-board":
-            alert ("You clicked the leaderboard button");
+            loadLBoard();
             break;
     }
 };
@@ -324,6 +324,8 @@ function winGame() {
     }
 
     if (revealedTiles === safeTiles) {
+        disableListener("click", revealTile)
+        stopTimer();
         (alert("you win"))
     }
 }
@@ -381,4 +383,8 @@ if (timerInterval) {
     clearInterval(timerInterval);
     timerInterval = 0;
 }
+}
+
+function loadLBoard() {
+    window.location = "score.html";
 }
