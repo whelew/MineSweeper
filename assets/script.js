@@ -124,7 +124,7 @@ function revealTile(event) {
         disableListener();
         removeAllFlags();
         revealAllMines();
-        setTimeout(gameOver, 2000); // calls gameover function after 2 second delay
+        setTimeout(gameOver, 1000); // calls gameover function after 2 second delay
         stopTimer();
     } else { 
         const minesDeteced = checkTile(row, col);
@@ -137,7 +137,7 @@ function revealTile(event) {
         }
     }
 
-    setTimeout(winGame, 1500);
+    setTimeout(winGame, 1000);
 }
 
 function disableListener() {
