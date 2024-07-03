@@ -149,13 +149,48 @@ Initially I was going to create 3 seperate html pages for each board, however I 
 
 ### Revealing the Tiles:
 
+#### revealTile(event)
+
+This function contains alot of other functions, it contains several if statements which determine the state of the tile clicked.
+
+- If the tile contains a flag or a mine has been pressed it will return, stopping the player from being able to click the tiles after the game is over. 
+- This was needed because after the game had finished clicking on a mine tile again would cause another mine img to be pushed into the tile resulting in an unwanted feature.
+- The second if statement checks if the tile contains a mine, if it does it will cause a series of other functions to occur. 
+- Else it will then call the checkTile function, adding it to a revealed classList, whilst also calling the checkNum function.
+- If the tile click detects no mines around it, it will then call the revealOtherTiles function. 
+
 #### checkTile(row, col)
 
-#### revealTile(event)
+The checkTile function needed to be able to check the surronding tiles and whether they contained mines or not. To do this it used an array of arrays.
+
+- The arrays: [[1, 1], [1, -1], [1, 0], [-1, 1], [-1, 0], [-1, -1], [0, 1], [0, -1],];
+- The gameRow and gameColumn are declared without a value, the value is then determined by the current boards id.
+- mineCount declares the current number of mines.
+- The for loop then loops through each direction.
+- If then checks whether the coordinates are in the board.
+- The second if then checks if those tiles that are in the board contain a mine.
+- If it does it will increment the mineCount.
 
 #### revealOtherTiles (row, col)
 
+This function is very similar to the checkTile function, the main difference is, it needs to check the tiles already checked. If the tiles checked are safe and empty it will then make those tiles check the tiles around them until a tile with a number is found.
+
+- It uses the same arrays as the previous function, and also declares the same gameRow and gameColumn function.
+- The first if statement works the same checking whether the coordinates are in the board.
+- A variable tile is declared getting the element by id. 
+- The second if statement however checks if the tiles around the tile clicked contain the class name of "revealed", if so, it will then automatically click these tiles.
+- The click will then continue to call the reveal tile function until it reveals all safe tiles close by.
+
 #### revealAllMines()
+
+This function uses a for loop to loop through all game-tiles with the class "mine-tile". When a mine is clicked this function will be called.
+
+- The function itself creates a new element (img).
+- It sets the src attribute.
+- Sets the id.
+- Adds it to the class "revealed-mine".
+- Then appends an img of a mine as a child.
+- So when a mine is clicked, all mines will be exposed.
 
 ### Adding The Flags:
 
