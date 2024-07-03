@@ -32,6 +32,10 @@ body {
     background-color: #a07e28;
 }
 
+.over {
+    width: 80%;
+}
+
 /* for how to play page */
 #div-instruct {
     margin: auto;
@@ -59,6 +63,7 @@ body {
     color: #f7b842;
 }
 
+/* for game board*/
 .game-board {
     border: 10px solid #DAA520;
     background-color: #1C1C1C;
@@ -155,11 +160,12 @@ body {
 /*for web pages only */
 #game-over-menu {
     position: absolute;
-    border: 3px solid black;
-    background: dimgray;
-    width: 20%;
-    left: 39.9%;
-    top: 20%;
+    top: 50%;
+    left: 50%;
+    border: 3px solid #DAA520;
+    transform: translate(-50%, -50%);
+    background: #3d3a3a;
+    width: 30%;
 }
 
 #win-menu {

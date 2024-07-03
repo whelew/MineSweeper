@@ -305,9 +305,11 @@ function gameOver() {
     <div id = "game-over-menu">
     <p>Game Over!</p>
     <br>
-    <button class="menu-button" id="main-menu">Main Menu</button>
-    <button class="menu-button" id="r-button">Restart</button>
-    <button class="menu-button" id="leader-board">Leader Board</button>
+    <button class="menu-button over" id="main-menu">Main Menu</button>
+    <br>
+    <button class="menu-button over" id="r-button">Restart</button>
+    <br>
+    <button class="menu-button over" id="leader-board">Leader Board</button>
     </div>
     `
     document.body.appendChild(gameOverDisplay);
