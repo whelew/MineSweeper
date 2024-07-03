@@ -35,6 +35,12 @@ This website was used to demonstrate the power of JavaScript functions whilst al
 - [Score HTML](#score-html)
 - [Instructions HTML](#instructions-html)
 
+## [Deployment and Cloning](#deployment-and-cloning-1)
+
+- [Deployment](#deployment)
+- [Cloning](#cloning)
+
+
 ## **Design**
 
 The design of the web page would be very simple. Originally the menu screen was to include 3 buttons for difficulty selection and a button linking you to the leaderboards. 
@@ -357,3 +363,30 @@ Each html page had an individual light house test.
 ### Instructions HTML
 
 ![Screen Shot of Light House Test on instructions.html](/assets/images/howToPlay.png)
+
+## **Deployment and Cloning**
+
+### Deployment
+
+- I deployed my site to Github.
+1. First go on to your github repository page.
+2. Then go to the settings tab.
+3. In the settings tab go to the pages tab on the side menu.
+4. Ensure that the source is "Deploy from a branch"
+5. Then make sure the Branch is set to "Main" and the folder selected is the "root" folder.
+6. After this click save and this will deploy a live version of the website.
+
+Live site can be found here: https://whelew.github.io/MineSweeper/instructions.html
+
+### Cloning
+
+- Instructions to clone: 
+
+1. Follow Link: https://github.com/whelew/MineSweeper.
+2. Click on the green code button. 
+3. Copy the HTTPS URL or Github CLI link. 
+4. Open Git Bash. 
+5. Change your current working directory to the location where you want the clone directory.
+6. Type git clone, followed by the URL you copied. 
+7. Press enter to create your local clone.
+
