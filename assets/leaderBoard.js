@@ -31,11 +31,26 @@ function updateLeaderBoard() {
             {name: document.getElementById("l-name-5").innerText,
                 score: parseInt(document.getElementById('l-score-5').innerText )
             },
+            {name: document.getElementById("l-name-6").innerText,
+                score: parseInt(document.getElementById('l-score-6').innerText )
+            },
+            {name: document.getElementById("l-name-7").innerText,
+                score: parseInt(document.getElementById('l-score-7').innerText )
+            },
+            {name: document.getElementById("l-name-8").innerText,
+                score: parseInt(document.getElementById('l-score-8').innerText )
+            },
+            {name: document.getElementById("l-name-9").innerText,
+                score: parseInt(document.getElementById('l-score-9').innerText )
+            },
+            {name: document.getElementById("l-name-10").innerText,
+                score: parseInt(document.getElementById('l-score-10').innerText )
+            },
         ];
         //push new value into array
         leaderBoard.push({name: name, score: score});
         leaderBoard.sort((a, b) => a.score - b.score);
-        leaderBoard.slice(0, 5);
+        leaderBoard.slice(0, 10);
 
         leaderBoard.forEach((entry, index) => {
             let nameEle = document.getElementById(`l-name-${index + 1}`);

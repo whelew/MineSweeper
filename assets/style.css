@@ -15,6 +15,12 @@ body {
     padding: 1rem;
 }
 
+/* menu header */
+.menu-header {
+    font-size: 56px;
+    text-decoration: underline;
+}
+
 
 /* for all buttons */
 .menu-button {
@@ -157,7 +163,7 @@ body {
     color: #800000;
 }
 
-/*for web pages only */
+/*game over display */
 #game-over-menu {
     position: absolute;
     top: 50%;
@@ -168,6 +174,8 @@ body {
     width: 40%;
 }
 
+
+/* win menu display */
 #win-menu {
     position: absolute;
     top: 50%;
@@ -215,8 +223,10 @@ body {
     background-color: #a07e28;    
 }
 
+/*leaderboard html page */
 .l-board {
-    width: 50%;
+    width: 30%;
+    font-size: 18px;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -242,7 +252,12 @@ body {
 }
 
 .l-board li span {
-    border: 1px solid black;
+    border: 1px solid #DAA520;
+    background: #3d3a3a;
     flex: 1;
     text-align: center;
+}
+
+#l-head {
+    font-size: 22px;
 }
