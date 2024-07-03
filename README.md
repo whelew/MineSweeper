@@ -106,7 +106,7 @@ Here is my chosen color list:
 
 ## **Functions**
 
-### **Generating The Board**
+### Generating The Board
 
 Initially I was going to create 3 seperate html pages for each board, however I had learned during my course you could use back ticks `` alongside .innerhtml to change a current elements inner html. For future implementation, creating 3 seperate html pages would have been a lot simpler to implement as there were more functions than anticipated and trying to target the correct id or class became difficult at times as I had to use query selectors and for loops many times.
 
