@@ -19,6 +19,7 @@ body {
 .menu-header {
     font-size: 56px;
     text-decoration: underline;
+    margin-bottom: 2px;
 }
 
 
@@ -112,9 +113,16 @@ body {
     height: 80%;
 }
 
-/* .game-board :onclick {
-    background-color: aquamarine;
-} */
+.flag-counter {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.flag-counter > img {
+    width: 25px;
+    height: 25px;
+    padding-right: 5px;
+}
 
 #easy-board {
     width: 400px;

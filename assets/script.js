@@ -9,7 +9,7 @@ function loadBoard(event) {
             levelSelect.innerHTML = `
             <button class="menu-button" id="return-btn">Main Menu</button>
             <br>
-            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">10</span>
+            <p class="flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">10</span>
             Timer:<span id="timer">0</span></p>
             <div class="game-board" id="easy-board"></div>
             `
@@ -22,7 +22,7 @@ function loadBoard(event) {
             levelSelect.innerHTML = `
             <button class="menu-button" id="return-btn">Main Menu</button>
             <br>
-            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">30</span>
+            <p class="flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">30</span>
             Timer:<span id="timer">0</span></p>
             <div class="game-board" id="normal-board"></div>
             `
@@ -35,7 +35,7 @@ function loadBoard(event) {
             levelSelect.innerHTML = `
             <button class="menu-button" id="return-btn">Main Menu</button>
             <br>
-            <p class="Flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">50</span>
+            <p class="flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">50</span>
             Timer:<span id="timer">0</span></p>
             <div class="game-board" id="hard-board"></div>
             `
@@ -145,8 +145,9 @@ function revealTile(event) {
 
 function disableListener() {
     const allTiles = document.querySelectorAll(".game-tile");
-
     allTiles.forEach(allTiles => allTiles.removeEventListener("click", revealTile))
+    const rightClickTiles = document.querySelectorAll(".game-tile");
+    rightClickTiles.forEach(rightClickTiles => rightClickTiles.removeEventListener("contextmenu", markTile))
 }
 
 //reveals allmines when one mine is clicked
