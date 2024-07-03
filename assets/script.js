@@ -1,5 +1,5 @@
-const levelSelect = document.getElementById("menu")
-levelSelect.addEventListener("click", loadBoard)
+const levelSelect = document.getElementById("menu");
+levelSelect.addEventListener("click", loadBoard);
 
 //insert game board after clicking on difficulty button
 function loadBoard(event) {
@@ -12,7 +12,7 @@ function loadBoard(event) {
             <p class="flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">10</span>
             Timer:<span id="timer">0</span></p>
             <div class="game-board" id="easy-board"></div>
-            `
+            `;
             populateGameBoard(8, 8, "easy-board");
             setMines(10, 8, 8);
             setMineId();
@@ -25,10 +25,10 @@ function loadBoard(event) {
             <p class="flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">30</span>
             Timer:<span id="timer">0</span></p>
             <div class="game-board" id="normal-board"></div>
-            `
+            `;
             populateGameBoard(12, 12, "normal-board");
             setMines(30, 12, 12);
-            setMineId()
+            setMineId();
             startTimer();
             break; 
         case "hard":
@@ -38,10 +38,10 @@ function loadBoard(event) {
             <p class="flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">50</span>
             Timer:<span id="timer">0</span></p>
             <div class="game-board" id="hard-board"></div>
-            `
+            `;
             populateGameBoard(12, 20, "hard-board");
             setMines(50, 12, 20);
-            setMineId()
+            setMineId();
             startTimer();
             break;
         case "leader-board":
@@ -54,7 +54,7 @@ function loadBoard(event) {
 
     let mainMenu = document.getElementById("return-btn");
     mainMenu.addEventListener("click", loadMainMenu);
-};
+}
 
 //populates easy game board with tiles
 function populateGameBoard(rows, columns, boardId) {
@@ -65,7 +65,7 @@ function populateGameBoard(rows, columns, boardId) {
         for (let c = 0; c < columns; c++) {
             let tile = document.createElement("div");
             tile.id = r.toString() + "-" + c.toString();
-            tile.className = "game-tile"
+            tile.className = "game-tile";
             tile.addEventListener("contextmenu", markTile);
             tile.addEventListener("click", revealTile);
             document.getElementById(boardId).append(tile);
@@ -76,31 +76,31 @@ function populateGameBoard(rows, columns, boardId) {
     console.log(board);    
 }
 
-let mines = []
+let mines = [];
 // pushes a number of coordinates into an array
 function setMines(numMines, rows, columns) {
-    mines = [] //resets array
+    mines = []; //resets array
     
     for (let i = 0; i < numMines; i++) {
         let x = Math.floor(Math.random() * rows);
         let y = Math.floor(Math.random() * columns);
         let location = [x, y];
         if (!mines.some(mine => mine[0] === x && mine[1] === y)) { //avoid duplicate mines
-            mines.push(location)   
+            mines.push(location);   
         } else {
             i--;
         }
     }
-    console.log(mines)
+    console.log(mines);
 }
 
 //sets Id of div to mine-tile if it contains a mine
 function setMineId() {
     let mineTile = document.getElementsByClassName("game-tile");
-    let mineArray = []
+    let mineArray = [];
     
-    for (i = 0; i < mineTile.length; i++) {
-        let mineTileId = mineTile[i].id
+    for (let i = 0; i < mineTile.length; i++) {
+        let mineTileId = mineTile[i].id;
         let [row, col] = mineTileId.split("-").map(Number);
         mineArray.push([row, col]);
 
@@ -115,8 +115,6 @@ function setMineId() {
 function revealTile(event) {
     const currentTileId = event.target.id;
     const [row, col] = currentTileId.split("-").map(Number); //map.Number to change string into number
-    let anyImg = document.getElementsByTagName("img");
-    let gameOverMenu = document.getElementById("game-over-menu")
 
     if (currentTileId === "flag" || currentTileId === "mine-pressed") {
         return;
@@ -131,7 +129,7 @@ function revealTile(event) {
     } else { 
         const minesDeteced = checkTile(row, col);
         this.innerText = minesDeteced;
-        this.classList.add("revealed")
+        this.classList.add("revealed");
         checkNum.call(this); //changes innerText font color based on number
 
         if (minesDeteced === 0) {
@@ -144,9 +142,9 @@ function revealTile(event) {
 
 function disableListener() {
     const allTiles = document.querySelectorAll(".game-tile");
-    allTiles.forEach(allTiles => allTiles.removeEventListener("click", revealTile))
+    allTiles.forEach(allTiles => allTiles.removeEventListener("click", revealTile));
     const rightClickTiles = document.querySelectorAll(".game-tile");
-    rightClickTiles.forEach(rightClickTiles => rightClickTiles.removeEventListener("contextmenu", markTile))
+    rightClickTiles.forEach(rightClickTiles => rightClickTiles.removeEventListener("contextmenu", markTile));
 }
 
 //reveals allmines when one mine is clicked
@@ -169,7 +167,7 @@ function removeAllFlags() {
     for (let a = 0; a < allTiles.length; a++) {
         let allFlags = allTiles[a].getElementsByClassName("flag-tile");
         while (allFlags.length > 0) {
-            allTiles[a].removeChild(allFlags[0])
+            allTiles[a].removeChild(allFlags[0]);
         }
     }
 }
@@ -179,9 +177,7 @@ function removeAllFlags() {
 function markTile(event) {
     event.preventDefault();
     const currentImg = this.querySelector("img");
-    var flagCounter = parseInt(document.getElementById("count").innerText)
-    let currentTile = this.className;
-    let revealedTile = document.getElementsByClassName("revealed");
+    var flagCounter = parseInt(document.getElementById("count").innerText);
 
     if (this.classList.contains("revealed")) {
         return;         
@@ -191,12 +187,12 @@ function markTile(event) {
         let flagImg = document.createElement("img");
         flagImg.setAttribute("src", "assets/images/flag.png");
         flagImg.id = "flag";
-        flagImg.classList.add("flag-tile")
+        flagImg.classList.add("flag-tile");
         this.appendChild(flagImg);
-        document.getElementById("count").innerText = --flagCounter
+        document.getElementById("count").innerText = --flagCounter;
     }  else {
         this.removeChild(currentImg);
-        document.getElementById("count").innerText = ++flagCounter
+        document.getElementById("count").innerText = ++flagCounter;
     }
     
 }
@@ -208,7 +204,7 @@ function checkTile(row, col) {
 
     if (document.getElementById("easy-board")) {
         gameRow = 8;
-        gameColumn = 8
+        gameColumn = 8;
     } else if (document.getElementById("normal-board")) {
         gameRow = 12;
         gameColumn = 12;
@@ -244,7 +240,7 @@ function revealOtherTiles (row, col) {
 
     if (document.getElementById("easy-board")) {
         gameRow = 8;
-        gameColumn = 8
+        gameColumn = 8;
     } else if (document.getElementById("normal-board")) {
         gameRow = 12;
         gameColumn = 12;
@@ -274,26 +270,26 @@ function revealOtherTiles (row, col) {
 //changes inner text color of tile divs to
 //match specific number of mines around tile
 function checkNum() {
-    const innerNum = parseInt(this.innerText)
+    const innerNum = parseInt(this.innerText);
 
     if (innerNum === 1) {
-        this.classList.add("number-one") 
+        this.classList.add("number-one"); 
     } else if (innerNum === 2) {
-        this.classList.add("number-two")
+        this.classList.add("number-two");
     } else if (innerNum === 3) {
-        this.classList.add("number-three")
+        this.classList.add("number-three");
     } else if (innerNum === 4) {
-        this.classList.add("number-four")
+        this.classList.add("number-four");
     } else if (innerNum === 5) {
-        this.classList.add("number-five")
+        this.classList.add("number-five");
     } else if (innerNum === 6) {
-        this.classList.add("number-six")
+        this.classList.add("number-six");
     } else if (innerNum === 7) {
-        this.classList.add("number-seven")
+        this.classList.add("number-seven");
     } else if (innerNum === 8) {
-        this.classList.add("number-eight")
+        this.classList.add("number-eight");
     } else if (innerNum === 0) {
-        this.innerText = ""
+        this.innerText = "";
     }
 }
 
@@ -311,7 +307,7 @@ function gameOver() {
     <br>
     <button class="menu-button over" id="leader-board">Leader Board</button>
     </div>
-    `
+    `;
     document.body.appendChild(gameOverDisplay);
 
     let restart = document.getElementById("r-button");
@@ -337,13 +333,13 @@ function winGame() {
     if (mBoard.contains(eBoard)) {
         safeTiles = 54;  
     } else if (mBoard.contains(nBoard)) {
-        safeTiles = 114
+        safeTiles = 114;
     } else if (mBoard.contains(hBoard)) {
-        safeTiles = 174
+        safeTiles = 174;
     }
 
     if (revealedTiles === safeTiles) {
-        disableListener("click", revealTile)
+        disableListener("click", revealTile);
         stopTimer();
         displayWinMenu();
         calculateScore();
@@ -364,13 +360,13 @@ function restartGame() {
     }
 
     if (mBoard.contains(eBoard)) {
-        let event = { target: { id: "easy"} }
+        let event = { target: { id: "easy"} };
         loadBoard(event);
     } else if (mBoard.contains(nBoard)) {
-        let event = { target: { id: "normal"} }
+        let event = { target: { id: "normal"} };
         loadBoard(event);
     } else if (mBoard.contains(hBoard)) {
-        let event = { target: { id: "hard"} }
+        let event = { target: { id: "hard"} };
         loadBoard(event);
     }
 }
@@ -380,7 +376,7 @@ let timerInterval;
 //sets the rule for timer
 function incrementTimer() {
     var timerEle = document.getElementById("timer");
-    var currentTime = parseInt(document.getElementById("timer").innerText)
+    var currentTime = parseInt(document.getElementById("timer").innerText);
     timerEle.innerText = currentTime + 1;   
 }
 
@@ -394,14 +390,14 @@ if (!timerInterval) {
 //stops the timer and logs timer score to console
 function stopTimer() {
 if (timerInterval) {
-    console.log(timerInterval)
+    console.log(timerInterval);
     clearInterval(timerInterval);
     timerInterval = 0;
 }
 }
 
 function loadInst() {
-    window.location = "instructions.html"
+    window.location = "instructions.html";
 }
 
 function loadLBoard() {
@@ -425,19 +421,19 @@ function displayWinMenu() {
     <br>
     <input type="submit" value="submit score" id="submit-btn">
     </div>
-    `
+    `;
     document.body.appendChild(winDisplay);
 }
 
 function calculateScore() {
     let currentTime = document.getElementById("timer");
     let currentValue = currentTime.textContent;
-    console.log(currentValue)
-    let scoreValue = document.getElementById("score-value")
+    console.log(currentValue);
+    let scoreValue = document.getElementById("score-value");
     scoreValue.innerText = currentValue;
 
     let submitBtn = document.getElementById("submit-btn");
-    submitBtn.addEventListener("click", submitScore)    
+    submitBtn.addEventListener("click", submitScore);    
 }
 
 function submitScore() {
@@ -445,6 +441,6 @@ function submitScore() {
     let scoreV = document.getElementById("score-value").innerText;
     localStorage.setItem("name", nameV);
     localStorage.setItem("score-value", scoreV);
-    window.location.href = "score.html"
+    window.location.href = "score.html";
     loadLBoard();
 }
