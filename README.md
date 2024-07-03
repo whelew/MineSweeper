@@ -368,6 +368,22 @@ Each html page had an individual light house test.
 
 ![Screen Shot of Light House Test on instructions.html](/assets/images/howToPlay.png)
 
+## **Testing**
+
+### Java Script Validator
+
+- Using JSHint I tested my script.js and my leaderBoard.js.
+
+- The results for my leaderBoard.js showed no signs of any errors.
+
+![Screen shot of JSHint for leaderBoard.js](/assets/images/leaderBoard.js.png)
+
+- The results for my script.js came back positive except for 3 warnings.
+- 3 Functions declared within loops reference an outer scoped variable ("mines").
+- This may lead to confusing semantics. However the functionality works fine and the game runs as it should.
+
+![Screen shot of JSHint for script.js](/assets/images/script.js.png)
+
 ## **Deployment and Cloning**
 
 ### Deployment
