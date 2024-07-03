@@ -47,6 +47,9 @@ function loadBoard(event) {
         case "leader-board":
             loadLBoard();
             break;
+        case "instructions":
+            loadInst();
+            break;
     }
 
     let mainMenu = document.getElementById("return-btn");
@@ -316,7 +319,7 @@ function gameOver() {
     mainMenu.addEventListener("click", loadMainMenu);
 
     let leaderB = document.getElementById("leader-board");
-    leaderB.addEventListener("click", loadLBoard)
+    leaderB.addEventListener("click", loadLBoard);
 }
 
 //checks whether you have revealed all safe tiles
@@ -393,6 +396,10 @@ if (timerInterval) {
     clearInterval(timerInterval);
     timerInterval = 0;
 }
+}
+
+function loadInst() {
+    window.location = "instructions.html"
 }
 
 function loadLBoard() {
