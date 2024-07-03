@@ -15,6 +15,7 @@ body {
     padding: 1rem;
 }
 
+
 /* for all buttons */
 .menu-button {
     font-size: large;
@@ -27,6 +28,10 @@ body {
     border: 2px solid #DAA520;
 }
 
+.menu-button:hover {
+    background-color: #a07e28;
+}
+
 .game-board {
     border: 10px solid #DAA520;
     background-color: #1C1C1C;
@@ -34,7 +39,6 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
-
 
 /* for game board tiles*/
 .game-board div {
