@@ -29,6 +29,12 @@ This website was used to demonstrate the power of JavaScript functions whilst al
 - [Loading Pages](#loading-pages)
 - [Extra Functions](#extra-functions)
 
+## [LightHouse Test](#light-hosue-test)
+
+- [Index HTML](#index-html)
+- [Score HTML](#score-html)
+- [Instructions HTML](#instructions-html)
+
 ## **Design**
 
 The design of the web page would be very simple. Originally the menu screen was to include 3 buttons for difficulty selection and a button linking you to the leaderboards. 
@@ -331,3 +337,23 @@ This is one of my favourite functions.
 - It will then add that tile to a class of "number-one" through to "number-eight".
 - CSS will then change the innerText of the tiles color to a specific color for that class.
 
+## **Light Hosue Test**
+
+Each html page had an individual light house test. 
+
+- Each page had 100% good performance, accessibility, best practices. 
+- The instructions html had 96% for best practices.
+- Each reported 90% for SEO. 
+- I will improve the meta data to improve on this.
+
+### Index HTML
+
+![Screen Shot of Light House Test on index.html](/assets/images/indexHTML.png)
+
+### Score HTML
+
+![Screen Shot of Light House Test on index.html](/assets/images/scoreHTML.png)
+
+### Instructions HTML
+
+![Screen Shot of Light House Test on instructions.html](//assets/images/howToPlay.png)
