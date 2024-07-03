@@ -38,7 +38,7 @@ This website was used to demonstrate the power of JavaScript functions whilst al
 ## [Testing](#testing-1)
 
 - [JS Validator](#java-script-validator)
-- [HTML Validator]
+- [HTML Validator](#html-validator)
 
 ## [Deployment and Cloning](#deployment-and-cloning-1)
 
