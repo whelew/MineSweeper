@@ -21,6 +21,13 @@ This website was used to demonstrate the power of JavaScript functions whilst al
 
 - [Generating The Board](#generating-the-board)
 - [Generating The Mines](#generating-the-mines)
+- [Revealing The Tiles](#revealing-the-tiles)
+- [Adding The Flags](#adding-the-flags)
+- [Win, GameOver, Restart!](#win-gameover-restart)
+- [Setting Up The Timer](#setting-up-the-timer)
+- [Setting up The Score](#setting-up-the-score)
+- [Loading Pages](#loading-pages)
+- [Extra Functions](#extra-functions)
 
 ## **Design**
 
@@ -106,7 +113,7 @@ Here is my chosen color list:
 
 ## **Functions**
 
-### Generating The Board
+### Generating The Board:
 
 Initially I was going to create 3 seperate html pages for each board, however I had learned during my course you could use back ticks `` alongside .innerhtml to change a current elements inner html. For future implementation, creating 3 seperate html pages would have been a lot simpler to implement as there were more functions than anticipated and trying to target the correct id or class became difficult at times as I had to use query selectors and for loops many times.
 
@@ -122,7 +129,7 @@ Initially I was going to create 3 seperate html pages for each board, however I 
 - Normal (12, 12, "normal-board")
 - hard (12, 20, "hard-board")
 
-### Generating The Mines
+### Generating The Mines:
 
 #### setMines(numMines, rows, columns);
 
@@ -140,42 +147,56 @@ Initially I was going to create 3 seperate html pages for each board, however I 
 - An if statement is then used to check if the current tiles coordinates match any of the coordiantes in a predefined array Mines. 
 - If a match is found it adds that tile to a classList of "mine-tile". 
 
-### revealTile(event)
+### Revealing the Tiles:
 
-### disableListener()
+#### checkTile(row, col)
 
-### revealAllMines()
+#### revealTile(event)
 
-### removeAllFlags()
+#### revealOtherTiles (row, col)
 
-### markTile(event)
+#### revealAllMines()
 
-### checkTile(row, col)
+### Adding The Flags:
 
-### revealOtherTiles (row, col)
+#### markTile(event)
 
-### checkNum()
+#### removeAllFlags()
 
-### gameOver()
+### Win, Gameover, Restart:
 
-### winGame()
+#### gameOver()
 
-### restartGame()
+#### winGame()
 
-### incrementTimer()
+#### displayWinMenu()
 
-### startTimer()
+#### restartGame()
 
-### stopTimer()
+### Setting up the Timer:
 
-### loadInst()
+#### incrementTimer()
 
-### loadLBoard()
+#### startTimer()
 
-### loadMainMenu()
+#### stopTimer()
 
-### displayWinMenu()
+### Setting up the Score:
 
-### calculateScore()
+#### calculateScore()
 
-### submitScore()
+#### submitScore()
+
+### Loading Pages:
+
+#### loadInst()
+
+#### loadLBoard()
+
+#### loadMainMenu()
+
+### Extra Functions:
+
+#### disableListener()
+
+#### checkNum()
