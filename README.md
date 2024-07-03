@@ -261,15 +261,43 @@ This function gets all the elements by id of the game boards. It then uses those
 
 #### incrementTimer()
 
+- Gets timer element by id "timer".
+- Declares second variable of get element by id "timer", however uses parseInt to get a number value.
+- It then sets the innerText of original timer element to, number value + 1. 
+
 #### startTimer()
 
+This function calls the incrementTimer function.
+
+- If timerInterval is not already defined, falsy.
+- If no timer is running, it uses a setInterval JavaScript function to call the incrementTimer function. (setInterval(incrementTimer,1000))
+- The 1000 refers to 1000 milliseconds and therefore, 1 second.
+- IncrementTimer will therefore increment current time by a value of 1 every second.
+
 #### stopTimer()
+
+This function stops the timer.
+
+- If timerInterval is truthy, it will log the value of the timerInterval.
+- It will clearInterval to stop previous incrementTimer function being called again.
+- Set timerInterval back to 0; 
 
 ### Setting up the Score:
 
 #### calculateScore()
 
+This function takes the value of the current timer and sets the innerText of the element with id of "score-value" to this value.
+
+- Sets score value to timer value.
+- Adds event listener to the submitBtn which calls submitScore function.
+
 #### submitScore()
+
+This function stores user name and user score to local storage.
+
+- Declares variables by element id.
+- Stores these variables into localStorage using JavaScript function setItem().
+- It then calls loadLBoard function, loading up the leader board html page.
 
 ### Loading Pages:
 
