@@ -15,7 +15,7 @@ This website was used to demonstrate the power of JavaScript functions whilst al
 ## [Color Scheme](#color-scheme-1)
 
 - [Color Charts](#color-charts)
-- [Number Colors]()
+- [Number Colors](#number-colors)
 
 ## **Design**
 
@@ -73,14 +73,14 @@ This color scheme works really well, the board tiles are clearly marked and it i
 ### Number Colors
 
 The color of the numbers of the original game change color depending on what number is shown:
-- 1 = Blue
-- 2 = Green
-- 3 = Red 
-- 4 = Dark Blue
-- 5 = Brown 
-- 6 = Cyan
-- 7 = Black
-- 8 = Grey
+1 = Blue
+2 = Green
+3 = Red 
+4 = Dark Blue
+5 = Brown 
+6 = Cyan
+7 = Black
+8 = Grey
 
 ![Original Number Color Scheme](/assets/images/originalMSColor.png)
 
@@ -88,14 +88,14 @@ The color of the numbers of the original game change color depending on what num
 - The colors vary less, and instead get darker as the number increases.  
 
 Here is my chosen color list:
-- 1 = Gold 
-- 2 = Orange
-- 3 = Dark Orange 
-- 4 = Tangelo
-- 5 = Tomato
-- 6 = Indian Red
-- 7 = Auburn
-- 8 = Maroon
+1 = Gold 
+2 = Orange
+3 = Dark Orange 
+4 = Tangelo
+5 = Tomato
+6 = Indian Red
+7 = Auburn
+8 = Maroon
 
 ![New Number Color Scheme](/assets/images/newNumberColors.png)
 
