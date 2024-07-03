@@ -390,3 +390,11 @@ Live site can be found here: https://whelew.github.io/MineSweeper/instructions.h
 6. Type git clone, followed by the URL you copied. 
 7. Press enter to create your local clone.
 
+## **Technologies Used**
+
+- HTML5
+- CSS - Cascading Style Sheet used to style the website.
+- Java Script - Uses 30 functions in script.js to generate game board and all game rules and functionality.
+- VS Code - The main IDE that I used. 
+- W3schools - For quick and useful information when trying to problem solve when writing with HTML and CSS.
+- JSHint - To check over my JS code.
