@@ -275,12 +275,31 @@ This function gets all the elements by id of the game boards. It then uses those
 
 #### loadInst()
 
+- This function uses window.location to load the instructions.html page.
+
 #### loadLBoard()
 
+- This function uses window.location to load the score.html page.
+
 #### loadMainMenu()
+
+- This function uses window.location to load the index.html page.
 
 ### Extra Functions:
 
 #### disableListener()
 
+This function is simply used to disable the EventListener("click", revealTile) and the EventListener("contextmenu", markTile).
+
+- If a mine has been clicked this function will be called.
+- If the user wins the game this function will be called.
+
 #### checkNum()
+
+This is one of my favourite functions. 
+
+- It declares a variable with the value of the number value innerText of the current tile (innerNum = parseInt(this.innerText)).
+- It then uses a series of if else statements to check the innerNum value against 1 - 8. 
+- It will then add that tile to a class of "number-one" through to "number-eight".
+- CSS will then change the innerText of the tiles color to a specific color for that class.
+
