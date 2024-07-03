@@ -29,15 +29,15 @@ This website was used to demonstrate the power of JavaScript functions whilst al
 - [Loading Pages](#loading-pages)
 - [Extra Functions](#extra-functions)
 
-## [Testing](#testing-1)
-
-- [JS Validator](#java-script-validator)
-
 ## [LightHouse Test](#light-hosue-test)
 
 - [Index HTML](#index-html)
 - [Score HTML](#score-html)
 - [Instructions HTML](#instructions-html)
+
+## [Testing](#testing-1)
+
+- [JS Validator](#java-script-validator)
 
 ## [Deployment and Cloning](#deployment-and-cloning-1)
 
