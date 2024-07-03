@@ -39,6 +39,8 @@ This website was used to demonstrate the power of JavaScript functions whilst al
 
 - [JS Validator](#java-script-validator)
 - [HTML Validator](#html-validator)
+- [CSS Validator](#css-validator)
+- [Function Tests](#function-tests)
 
 ## [Deployment and Cloning](#deployment-and-cloning-1)
 
@@ -399,6 +401,12 @@ Each html page had an individual light house test.
 ![Screen shot of score.html](/assets/images/score.html.valid.png)
 
 ![Screen shot of instructions.html](/assets/images/instructions.html.valid.png)
+
+### CSS Validator
+
+- Tested CSS using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+
+### Function Tests
 
 ## **Deployment and Cloning**
 
