@@ -48,3 +48,5 @@ The Leader Board would show the results of the players final score, this would b
 Here are the list of functions I prenamed:
 - updateLeaderBoard() //This would update the players score and push it into the leaderboard
 - returnToMainMenu() //User returns to main menu
+
+![Wireframe of original Leader Board](/assets/images/leaderboard.png)
