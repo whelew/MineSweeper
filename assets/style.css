@@ -32,6 +32,33 @@ body {
     background-color: #a07e28;
 }
 
+/* for how to play page */
+#div-instruct {
+    margin: auto;
+    padding: 1rem;
+    width: fit-content;
+}
+
+#ul-instruct {
+    list-style-type: none;
+    text-align: center;
+    font-size: large;
+}
+
+#ul-instruct li {
+    padding: 1rem;
+    background-color: #3d3a3a;
+    border: 2px solid #DAA520;
+}
+
+.li-one {
+    color: #FFD700;
+}
+
+.li-two {
+    color: #f7b842;
+}
+
 .game-board {
     border: 10px solid #DAA520;
     background-color: #1C1C1C;
@@ -70,8 +97,8 @@ body {
 }
 
 #flag {
-    width: 75%;
-    height: 75%;
+    width: 80%;
+    height: 80%;
 }
 
 /* .game-board :onclick {
