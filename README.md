@@ -356,4 +356,4 @@ Each html page had an individual light house test.
 
 ### Instructions HTML
 
-![Screen Shot of Light House Test on instructions.html](//assets/images/howToPlay.png)
+![Screen Shot of Light House Test on instructions.html](/assets/images/howToPlay.png)
