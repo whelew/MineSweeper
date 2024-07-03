@@ -38,6 +38,7 @@ This website was used to demonstrate the power of JavaScript functions whilst al
 ## [Testing](#testing-1)
 
 - [JS Validator](#java-script-validator)
+- [HTML Validator]
 
 ## [Deployment and Cloning](#deployment-and-cloning-1)
 
@@ -376,7 +377,7 @@ Each html page had an individual light house test.
 
 ### Java Script Validator
 
-- Using JSHint I tested my script.js and my leaderBoard.js.
+- Using [JSHint](https://jshint.com/) I tested my script.js and my leaderBoard.js.
 
 - The results for my leaderBoard.js showed no signs of any errors.
 
@@ -388,11 +389,22 @@ Each html page had an individual light house test.
 
 ![Screen shot of JSHint for script.js](/assets/images/script.js.png)
 
+### HTML Validator 
+
+- Tested all HTML pages using [W3C Validator](https://validator.w3.org/).
+- All pages passed withour error.
+
+![Screen shot of index.html](/assets/images/index.html.valid.png)
+
+![Screen shot of score.html](/assets/images/score.html.valid.png)
+
+![Screen shot of instructions.html](/assets/images/instructions.html.valid.png)
+
 ## **Deployment and Cloning**
 
 ### Deployment
 
-- I deployed my site to Github.
+- I deployed my site to [Github](https://github.com/).
 1. First go on to your github repository page.
 2. Then go to the settings tab.
 3. In the settings tab go to the pages tab on the side menu.
