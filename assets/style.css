@@ -162,18 +162,20 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    border: 3px solid #DAA520;
     transform: translate(-50%, -50%);
+    border: 3px solid #DAA520;
     background: #3d3a3a;
-    width: 30%;
+    width: 40%;
 }
 
 #win-menu {
     position: absolute;
-    border: 3px solid black;
-    background: dimgray;
-    width: 20%;
-    left: 39.9%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid #DAA520;
+    background: #3d3a3a;
+    width: 40%;
 }
 
 .l-board {
