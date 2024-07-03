@@ -6,3 +6,16 @@ This website was used to demonstrate the power of JavaScript functions whilst al
 
 # Table of Contents
 
+## [Design]
+
+## **Design**
+
+The design of the web page would be very simple. Originally the menu screen was to include 3 buttons for difficulty selection and a button linking you to the leaderboards. 
+
+### Menu Screen
+
+- The original menu screen, 4 buttons 3 of which would open a game board of varying sizes depending on difficulty.
+- Using this wireframe I precreated some function names I would need:
+- - 
+
+![Wireframe of original Menu Screen](/assets/images/menuscreen.png)
