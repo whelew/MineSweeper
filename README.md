@@ -117,13 +117,28 @@ Initially I was going to create 3 seperate html pages for each board, however I 
 
 #### populateGameBoard(rows, columns, boardId);
 
-- The populateGameBoard function, creates a series of divs, all with a specific id that is stored in an array called board. For example, [{0, 0}, {0, 1}, {0, 2}] all the way up to {7,7} for a board with id="easy". It uses two for loops to create rows and columns with specific ids. It also adds event listeners to the divs themselves, one for ("click", revealTile) and ("contextmenu", markTile) left click and right click. 
+- The populateGameBoard function, creates a series of divs, all with a specific id that is stored in an array called board. For example, [{0, 0}, {0, 1}, {0, 2}] all the way up to {7,7} for a board with id="easy". It uses two for loops to create rows and columns with specific ids. It also adds event listeners to the divs themselves, one for ("click", revealTile) and ("contextmenu", markTile) left click and right click. The arguments rows, columns and boardID are declared inside of the loadBoard function:
+- Easy (8, 8, "easy-board")
+- Normal (12, 12, "normal-board")
+- hard (12, 20, "hard-board")
 
 ### Generating The Mines
 
 #### setMines(numMines, rows, columns);
 
+- This function declares the number of Mines = numMines, and also uses rows and columns to justify there location.
+- Easy (10, 8, 8,)
+- Normal (30, 12, 12)
+- hard (50, 12, 20,)
+
+- Inside the function it uses a Math.floor(Math.random()) method multiplied by either the rows or columns argument. It then sets the location as an array which will then later be used to identify which tile has a mine using the setMineId function.
+
 #### setMineId()
+
+- This function sets the Id of a div to id="mine-tile" depending on whether the tile Id and the random generated Id from setMines function match up. 
+- It uses a for loop to cycle through the length of the game-tile class list, splits the id down the middle by the previously added "-" in the populate game board, turns the string into a number as a variable declared [row, col]. 
+- An if statement is then used to check if the current tiles coordinates match any of the coordiantes in a predefined array Mines. 
+- If a match is found it adds that tile to a classList of "mine-tile". 
 
 ### revealTile(event)
 
