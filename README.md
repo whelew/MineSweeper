@@ -17,6 +17,11 @@ This website was used to demonstrate the power of JavaScript functions whilst al
 - [Color Charts](#color-charts)
 - [Number Colors](#number-colors)
 
+## [Functions](#functions-1)
+
+- [Generating The Board](#generating-the-board)
+- [Generating The Mines](#generating-the-mines)
+
 ## **Design**
 
 The design of the web page would be very simple. Originally the menu screen was to include 3 buttons for difficulty selection and a button linking you to the leaderboards. 
@@ -99,3 +104,63 @@ Here is my chosen color list:
 
 ![New Number Color Scheme](/assets/images/newNumberColors.png)
 
+## **Functions**
+
+### Generating The Board
+
+Initially I was going to create 3 seperate html pages for each board, however I had learned during my course you could use back ticks `` alongside .innerhtml to change a current elements inner html. For future implementation, creating 3 seperate html pages would have been a lot simpler to implement as there were more functions than anticipated and trying to target the correct id or class became difficult at times as I had to use query selectors and for loops many times.
+
+#### loadBoard(event);
+
+- The loadBoard function changes the current innerHtml content of the div with class="board" and id="menu". It creates a new menu button, a flag counter, timer and a div with class="game-board". The id of the board is determinded by a switch statement, depending on which menu button was hit, it will check through the cases, and whether the id was "easy", "normal" or "hard" will generate a board with that specific id. 
+- The loadBoard function also contains several other functions, one being populateGameBoard. 
+
+#### populateGameBoard(rows, columns, boardId);
+
+- The populateGameBoard function, creates a series of divs, all with a specific id that is stored in an array called board. For example, [{0, 0}, {0, 1}, {0, 2}] all the way up to {7,7} for a board with id="easy". It uses two for loops to create rows and columns with specific ids. It also adds event listeners to the divs themselves, one for ("click", revealTile) and ("contextmenu", markTile) left click and right click. 
+
+### Generating The Mines
+
+#### setMines(numMines, rows, columns);
+
+#### setMineId()
+
+### revealTile(event)
+
+### disableListener()
+
+### revealAllMines()
+
+### removeAllFlags()
+
+### markTile(event)
+
+### checkTile(row, col)
+
+### revealOtherTiles (row, col)
+
+### checkNum()
+
+### gameOver()
+
+### winGame()
+
+### restartGame()
+
+### incrementTimer()
+
+### startTimer()
+
+### stopTimer()
+
+### loadInst()
+
+### loadLBoard()
+
+### loadMainMenu()
+
+### displayWinMenu()
+
+### calculateScore()
+
+### submitScore()

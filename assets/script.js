@@ -111,7 +111,6 @@ function setMineId() {
 }
 
 //mineTile[i].classList.add("mine-tile") // mineArray.push([row, col]);
-
 // will reveal hidden tile
 function revealTile(event) {
     const currentTileId = event.target.id;
@@ -379,7 +378,7 @@ function restartGame() {
 let timerInterval;
 
 //sets the rule for timer
-function incrementTimer () {
+function incrementTimer() {
     var timerEle = document.getElementById("timer");
     var currentTime = parseInt(document.getElementById("timer").innerText)
     timerEle.innerText = currentTime + 1;   
