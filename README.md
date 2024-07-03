@@ -186,7 +186,7 @@ This function is very similar to the checkTile function, the main difference is,
 This function uses a for loop to loop through all game-tiles with the class "mine-tile". When a mine is clicked this function will be called.
 
 - The function itself creates a new element (img).
-- It sets the src attribute.
+- It sets thge src attribute.
 - Sets the id.
 - Adds it to the class "revealed-mine".
 - Then appends an img of a mine as a child.
@@ -196,17 +196,66 @@ This function uses a for loop to loop through all game-tiles with the class "min
 
 #### markTile(event)
 
+This function was originally named incrementFlag, however after creating the function, calling it markTile was more appropriate.
+
+This tile prevents the default contextmenu function and instead replaces it with being able to append a flag image to the current tile using a right click on the mouse.
+
+- It preventsDefault.
+- It uses an if statement to detect whether the current tile ("this") contains a child. (this.querySelector("img") === null).
+- If it does not contain a child it will append a flag image to that tile. 
+- Else it will remove that child.
+- Whilst doing so, the if will increment the flagCounter whilst the else will decrement the flagCounter.
+
 #### removeAllFlags()
+
+This function was designed after play testing the game and realising that when mines were revealed the flag would still remain on the mine tile causing a visual bug where both the mine image and the flag image were inside of one div.
+
+A more suitable name would be removeAllFlagsFromMines, but this seemed too long.
+
+- A variable is declared to get all tiles with class "mine-tile".
+- A for loop is then used to iterate through the length of the mine tiles.
+- A second variable is declared to get all elements with class name "flag-tile".
+- The while loop will continue as long as there are flag elements present. 
+- It will then remove that child from the mine tile. 
 
 ### Win, Gameover, Restart:
 
-#### gameOver()
-
 #### winGame()
+
+This function checks to see if the number of revealed tiles is === to the number of safeTiles.
+
+- The safeTiles variable value is decided by an if statement checking the boards id, it then sets the value to either, 54 for easy, 114 for normal and 174 for hard.
+- The function is called on every left click of a tile.
+- It uses an if statement to check safeTiles and revealedTiles are equal.
+- If so it will run a series of other functions.
 
 #### displayWinMenu()
 
+This function creates a new element div. This div is then appended as a child of the body.
+
+- The div is fileld with a new inner html using back ticks `` to declare all the elements inside the div.
+- The div is then appended to as a child to the document.body.
+
+#### gameOver()
+
+This function includes what the dispalyWinMenu function does, but instead of calling it from a seperate function it is already contained inside the gameOver function.
+
+- Creates div element with id of "game-over-menu".
+- div.innerHTML is then set.
+- It then appends the div as a child of the body.
+- It declares 3 variables and adds 1 event listener to each of them.
+- These are the restart, return to main menu and leader board buttons. 
+
 #### restartGame()
+
+This function gets all the elements by id of the game boards. It then uses those ids to call back the loadBoard(event).
+
+- The event is declared as event = target: {id: "gameBoardId"}
+- Depending on which id is declared, it will then call the loadBoard function.
+- In affect it loads an entire new board hence restarting the game.
+- All tiles will have been changed, mines spot will have moved. 
+- It also uses an if statement to check whether the gameOverDisplay is on screen, if so, this will be removed. 
+
 
 ### Setting up the Timer:
 
