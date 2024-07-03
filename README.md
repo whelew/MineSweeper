@@ -40,6 +40,10 @@ This website was used to demonstrate the power of JavaScript functions whilst al
 - [Deployment](#deployment)
 - [Cloning](#cloning)
 
+## [Technologies](#technologies-used)
+
+
+
 
 ## **Design**
 
