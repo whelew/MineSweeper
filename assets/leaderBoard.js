@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 }); 
 
 let lBoardBtn = document.getElementById("l-menu");
-lBoardBtn.addEventListener("click", loadMainMenu)
+lBoardBtn.addEventListener("click", loadMainMenu);
 
 function loadMainMenu() {
     window.location = "index.html";
@@ -60,7 +60,7 @@ function updateLeaderBoard() {
                 nameEle.innerText = entry.name;
                 scoreEle.innerText = entry.score;
             }
-        })
+        });
     }
 }
 
