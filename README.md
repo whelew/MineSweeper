@@ -424,6 +424,22 @@ Each html page had an individual light house test.
 
 ### Function Tests
 
+|Function  |Test      |Outcome	|
+|:-------:|:--------:|:--------:|
+|Reveal Tile |Left Click On a Tile |Tile is revealed to either be a safe tile or a mine tile.|
+|Reveal Other Tiles| Left Click On a Safe Tile |After tile is revealed and has no mines around it, it will reveal those tiles as well. This function will repeat until number tiles are found.|
+|Mark Tile |Right Click on a Tile |If you right click on a tile it will place a flag image to mark that spot with a flag. This lets the player note down which spots they believe have mines in them.|
+|Reveal All Mines |Left click a Mine Tile |Left clicking a mine tile will reveal that tile as a mine and all other mine tiles will be revealed.|
+|Remove All Flags |Left click on a Mine Tile | When all mines are revealed, if those tiles initally had been marked by a flag, the flag would be removed and replaced by a mine. |
+|Load Board |Clicking Easy, Normal or Hard |This will load a board of either 8x8, 12x12, 12x20 depending on the difficulty.|
+|Populate Game Board| Clicking Difficulty |This will populate the game board with divs known as tiles and set them all ids.|
+|Set Mine Id |When Game Board Loads |Mine ids will have been randomly generated then matched to a specific tile on the newly generated game board.|
+|Load Game Over Display |Lose the Game |When a player loses the game a new child of the body will appear telling the player the game is over, it includes 3 buttons allowing them to either restart, load main menu or visit the leaderboard.|
+|Load Win Menu Display |Win the Game |When a player wins the game a new child of the body will appear telling the player they won the game, what their score is and provide them with a name input and a submit score button.|
+|Update Leader Board | Click Submit Score |When submit score is clicked it will transfer the user to the leaderboard page and upload their time as a score. The leader board will then update the leaderboard and put the quickest time at the top and the slowest time at the bottom. |
+
+
+
 ## **Bugs and Debugging**
 
 ### Unresolved Bugs
