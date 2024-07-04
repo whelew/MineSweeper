@@ -13,8 +13,10 @@ body {
     align-items: center;
     margin: auto;
     padding: 1rem;
+    padding-bottom: 1rem;
     padding-left: 0;
     padding-right: 0;
+    margin-bottom: 1rem;
 }
 
 #easy-board {
@@ -276,13 +278,9 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 5%;
     border: 1px solid #DAA520;
     background: #3d3a3a;
-}
-
-.footer-links {
-    
+   
 }
 
 .footer-links > ul {
@@ -300,7 +298,7 @@ footer {
     color: gold;
 }
 
-@media screen and (min-width: 380px) {
+@media screen and (min-width: 360px) {
     #easy-board {
         width: 152px;
         height: 152px;
@@ -326,7 +324,7 @@ footer {
 
 /* Media Query for Mobile Phones */
 
-@media screen and (min-width: 480px) {    
+@media screen and (min-width: 460px) {    
 
 #easy-board {
     width: 184px;
