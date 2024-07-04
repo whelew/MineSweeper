@@ -62,6 +62,8 @@ This website was used to demonstrate the power of JavaScript functions whilst al
 
 ## [Technologies](#technologies-used)
 
+## [Credits](#credits-1)
+
 
 
 
@@ -548,3 +550,12 @@ Live site can be found here: https://whelew.github.io/MineSweeper/instructions.h
 - VS Code - The main IDE that I used. 
 - W3schools - For quick and useful information when trying to problem solve when writing with HTML and CSS.
 - JSHint - To check over my JS code.
+
+## **Credits**
+
+- This project required a lot of research and patience. I was able to use many helpful resources at my disposal to help me create and finish my website.
+- [Kenny Yip Coding](https://www.youtube.com/@KennyYipCoding) was a helpful youtube channel. This is where I got the orignal populate board function from and decided to use that as inspiration and use it as a foundation to my own website.
+- [w3schools](https://www.w3schools.com/) was also a helpful website for trouble shooting html, css and js issues.
+- [stack overflow](https://stackoverflow.com/) was another helpful website for trouble shooting issues. This is where I found out about the javascript built in functions.
+- My mentor Luke has also provided me with helpful and useful feedback for me to implement.
+- Icons were used for the footer from [Font Awesome](https://fontawesome.com/icons)
