@@ -438,8 +438,6 @@ Each html page had an individual light house test.
 |Load Win Menu Display |Win the Game |When a player wins the game a new child of the body will appear telling the player they won the game, what their score is and provide them with a name input and a submit score button.|
 |Update Leader Board | Click Submit Score |When submit score is clicked it will transfer the user to the leaderboard page and upload their time as a score. The leader board will then update the leaderboard and put the quickest time at the top and the slowest time at the bottom. |
 
-
-
 ## **Bugs and Debugging**
 
 ### Unresolved Bugs
