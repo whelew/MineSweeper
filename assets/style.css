@@ -13,11 +13,48 @@ body {
     align-items: center;
     margin: auto;
     padding: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#easy-board {
+    width: 200px;
+    height: 200px;
+} 
+    
+#normal-board {
+    width: 300px;
+    height: 300px;
+} 
+    
+#hard-board {
+    width: 500px;
+    height: 300px;
+} 
+
+.game-board {
+    border: 5px solid #DAA520;
+    background-color: #1C1C1C;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* for game board tiles*/
+.game-board div {
+    border: 1px solid #DAA520;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 23px;
+    height: 23px;
+    border: 1px solid #DAA520;
 }
 
 /* menu header */
 .menu-header {
-    font-size: 56px;
+    font-size: 40px;
     text-decoration: underline;
     margin-bottom: 2px;
 }
@@ -28,8 +65,7 @@ body {
     font-size: large;
     text-align: center;
     margin: 1rem;
-    padding: 1rem;
-    width: 25%;
+    width: 70%;
     color: #FFD700;
     background-color: #3d3a3a;
     border: 2px solid #DAA520;
@@ -54,6 +90,7 @@ body {
     list-style-type: none;
     text-align: center;
     font-size: large;
+    display: contents;
 }
 
 #ul-instruct li {
@@ -68,27 +105,6 @@ body {
 
 .li-two {
     color: #f7b842;
-}
-
-/* for game board*/
-.game-board {
-    border: 10px solid #DAA520;
-    background-color: #1C1C1C;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-/* for game board tiles*/
-.game-board div {
-    width: 48px;
-    height: 48px;
-    border: 1px solid #DAA520;
-
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .game-board :hover {
@@ -114,61 +130,14 @@ body {
 }
 
 .flag-counter {
-    font-size: 20px;
     margin-top: 0;
+    display: flex;
 }
 
 .flag-counter > img {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     padding-right: 5px;
-}
-
-#easy-board {
-    width: 400px;
-    height: 400px;
-} 
-
-#normal-board {
-    width: 600px;
-    height: 600px;
-} 
-
-#hard-board {
-    width: 1000px;
-    height: 600px;
-} 
-
-.number-one {
-    color: #FFD700;
-}
-
-.number-two {
-    color: #FFA500;
-}
-
-.number-three {
-    color: #FF8C00;
-}
-
-.number-four {
-    color: #FF4500;
-}
-
-.number-five {
-    color: #FF6347;
-}
-
-.number-six {
-    color: #CD5C5C;
-}
-
-.number-seven {
-    color: #A52A2A;
-}
-
-.number-eight {
-    color: #800000;
 }
 
 /*game over display */
@@ -233,7 +202,7 @@ body {
 
 /*leaderboard html page */
 .l-board {
-    width: 30%;
+    width: 80%;
     font-size: 18px;
     display: inline-flex;
     flex-direction: column;
@@ -268,4 +237,209 @@ body {
 
 #l-head {
     font-size: 22px;
+}
+
+.number-one {
+    color: #FFD700;
+}
+
+.number-two {
+    color: #FFA500;
+}
+
+.number-three {
+    color: #FF8C00;
+}
+
+.number-four {
+    color: #FF4500;
+}
+
+.number-five {
+    color: #FF6347;
+}
+
+.number-six {
+    color: #CD5C5C;
+}
+
+.number-seven {
+    color: #A52A2A;
+}
+
+.number-eight {
+    color: #800000;
+}
+
+@media screen and (min-width: 380px) {
+    #easy-board {
+        width: 152px;
+        height: 152px;
+    } 
+        
+    #normal-board {
+        width: 228px;
+        height: 228px;
+    } 
+        
+    #hard-board {
+        width: 380px;
+        height: 228px;
+    }
+    
+    .game-board div {
+        width: 17px;
+        height: 17px;
+        border: 1px solid #DAA520;
+    }
+}
+
+
+/* Media Query for Mobile Phones */
+
+@media screen and (min-width: 480px) {    
+
+#easy-board {
+    width: 184px;
+    height: 184px;
+} 
+    
+#normal-board {
+    width: 276px;
+    height: 276px;
+} 
+    
+#hard-board {
+    width: 460px;
+    height: 276px;
+} 
+
+
+    /* for game board*/
+.game-board {
+    border: 5px solid #DAA520;
+}
+
+/* for game board tiles*/
+.game-board div {
+    width: 21px;
+    height: 21px;
+    border: 1px solid #DAA520;
+}
+
+.menu-button {
+    width: 70%;
+}
+
+}
+
+
+/* for ipads */
+@media screen and (min-width: 768px) {
+
+    #easy-board {
+        width: 280px;
+        height: 280px;
+    } 
+        
+    #normal-board {
+        width: 420px;
+        height: 420px;
+    } 
+        
+    #hard-board {
+        width: 700px;
+        height: 420px;
+    } 
+    
+        /* for game board*/
+    .game-board {
+        border: 5px solid #DAA520;
+    }
+    
+    /* for game board tiles*/
+    .game-board div {
+        width: 33px;
+        height: 33px;
+        border: 1px solid #DAA520;
+    }
+
+    .menu-button {
+        width: 40%;
+    }
+
+}
+
+/* Computer Screen */
+@media screen and (min-width: 1025px) {
+
+/* for game board*/
+.game-board {
+    border: 10px solid #DAA520;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* for game board tiles*/
+.game-board div {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #DAA520;
+
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#easy-board {
+    width: 400px;
+    height: 400px;
+} 
+
+#normal-board {
+    width: 600px;
+    height: 600px;
+} 
+
+#hard-board {
+    width: 1000px;
+    height: 600px;
+} 
+
+.menu-button {
+    width: 20%;
+}
+
+#l-menu {
+    width: 30%;
+}
+
+.l-board {
+    width: 50%;
+}
+
+.menu-header {
+    font-size: 56px;
+}
+
+.menu-button {
+    font-size: large;
+    text-align: center;
+    margin: 1rem;
+    padding: 1rem;
+    width: 30%;
+}
+
+.flag-counter {
+    font-size: 20px;
+}
+
+.flag-counter > img {
+    width: 25px;
+    height: 25px;
+    padding-right: 5px;
+}
+
 }
