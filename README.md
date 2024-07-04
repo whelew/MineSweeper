@@ -42,7 +42,10 @@ This website was used to demonstrate the power of JavaScript functions whilst al
 - [CSS Validator](#css-validator)
 - [Function Tests](#function-tests)
 
-## [Bugs and Debugging]()
+## [Bugs and Debugging](#bugs-and-debugging-1)
+
+- [Unresolved Bugs](#unresolved-bugs)
+- [Resolved Bugs](#resolved-bugs)
 
 ## [Deployment and Cloning](#deployment-and-cloning-1)
 
@@ -435,7 +438,20 @@ Each html page had an individual light house test.
 - Before it would automically reveal the tile when you clicked on the flag image so I have been able to manage this issue.
 - The reveal would also not work correctly, and the tile itself would not actually reveal if the tile was safe or had a mine, but after adding my bug fix it now reveals the tile if the user does so happen to click the tile.
 
-#### 
+### Resolved Bugs
+
+#### Mines not removing Flag Image
+
+- The mines now remove all flag images on a mine tile when all mines are revealed.
+- Before this my funciton would cause the mines to remove the first flag image on a mine tile but not the rest.
+- It was not looping through the mine tile array properly, therefore a while loop was needed. 
+- As long as the length of flagTiles was greater than 0 on a mine tile it would continue to loop.
+
+#### Being able to click after the game has finished
+
+- The left and right click both continued to work after gameOver or winGame had been called.
+- To combat this, I created a disableListener function to be called when the previous functions had been called.
+- This means that while the tiles themselves are still active, they have no active listener to active the functions. 
 
 ## **Deployment and Cloning**
 
