@@ -543,7 +543,7 @@ Live site can be found here: https://whelew.github.io/MineSweeper/instructions.h
 7. Press enter to create your local clone.
 
 ## **Technologies Used**
-
+gi
 - HTML5
 - CSS - Cascading Style Sheet used to style the website.
 - Java Script - Uses 30 functions in script.js to generate game board and all game rules and functionality.

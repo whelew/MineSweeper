@@ -335,7 +335,7 @@ function winGame() {
     } else if (mBoard.contains(nBoard)) {
         safeTiles = 114;
     } else if (mBoard.contains(hBoard)) {
-        safeTiles = 174;
+        safeTiles = 190;
     }
 
     if (revealedTiles === safeTiles) {
