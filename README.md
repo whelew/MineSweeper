@@ -102,6 +102,10 @@ Here are the list of functions I prenamed:
 
 ![Wireframe of original Leader Board](/assets/images/leaderboard.png)
 
+### Error 404
+
+- I created a simple Error 404 page to direct any user looking for the website back to the main menu.
+
 ## **Color Scheme**
 
 ### Color Charts
