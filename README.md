@@ -47,6 +47,12 @@ This website was used to demonstrate the power of JavaScript functions whilst al
 - [Unresolved Bugs](#unresolved-bugs)
 - [Resolved Bugs](#resolved-bugs)
 
+## [Future Implementations](#future-implementations-1)
+
+- [Leader Board](#leader-board-1)
+- [Game Music](#game-music)
+- [Theme Selector](#theme-selector)
+
 ## [Deployment and Cloning](#deployment-and-cloning-1)
 
 - [Deployment](#deployment)
@@ -452,6 +458,39 @@ Each html page had an individual light house test.
 - The left and right click both continued to work after gameOver or winGame had been called.
 - To combat this, I created a disableListener function to be called when the previous functions had been called.
 - This means that while the tiles themselves are still active, they have no active listener to active the functions. 
+
+
+## **Future Implementations**
+
+### Leader Board
+
+#### New Column
+
+- The leader board is missing one column, the level difficulty.
+- This would be useful as only players times are being recorded, meaning that a player might get a time of 300 and be bottom of the leaderboard, however they did this time on the hard board. 
+- I would most likely add a new columm or have 3 seperate leaderboards all together.
+- This would later develop into the leaderboard html having 4 tabs, "Easy", "Normal", "Hard" and "Global". 
+- Global would include all 3 difficulties. 
+
+#### Database
+
+- The leaderboard does update the players score on victory to the leaderboard, however this is only in local storage.
+- If the player refreshes the page this score will be lost.
+- I would like to be able to develop a data base so every users score can be saved and compared against other competitors.
+- I would then be able to extend the length of my leaderboard as well as it having global scores rather than only local based ones.
+
+### Game Music
+
+- I would like to be able to add a music player that the user can choose to turn on and off and adjust the volume manually. 
+- I have done a masters in video game composition and would like to compose the music myself as this would be a great reference for personal work.
+
+### Theme Selector
+
+- A theme selector would be a very fun feature to add.
+- It would be easy enough to implement, however take some time making sure the function targeted every element correctly and changed their classes accordingly.
+- The theme selector would then change the elements class, and these classes would have their own CSS.
+- I would be able to include the original Mine Sweeper Theme (a variation of grays).
+- Alongside many others, forest themed, space themed, fire, water, in the sky, etc. 
 
 ## **Deployment and Cloning**
 
