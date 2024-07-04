@@ -137,7 +137,7 @@ function revealTile(event) {
         }
     }
 
-    setTimeout(winGame, 1000);
+    setTimeout(winGame, 500);
 }
 
 function disableListener() {

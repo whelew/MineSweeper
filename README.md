@@ -42,6 +42,8 @@ This website was used to demonstrate the power of JavaScript functions whilst al
 - [CSS Validator](#css-validator)
 - [Function Tests](#function-tests)
 
+## [Bugs and Debugging]()
+
 ## [Deployment and Cloning](#deployment-and-cloning-1)
 
 - [Deployment](#deployment)
@@ -412,6 +414,28 @@ Each html page had an individual light house test.
 ![Screen shot of succesful CSS Validator test](/assets/images/CSS%20Validator.png)
 
 ### Function Tests
+
+## **Bugs and Debugging**
+
+### Unresolved Bugs
+
+- There are a few bugs that need patching up which I would like to do when I have more time.
+
+#### Game Board Size - Media Queries
+
+- The main issue is adjusting all the media queries correctly for mobile screen sizes. 
+- Ideally I would like to make my hard game mode longer in height and shorter in width, this would help the game adapt to the width and height of a mobile screen. 
+- This would mean that I would need to adjust all the arguments for the functions themself which might get complicated this late in development, this is something I should have considered earlier on. 
+- It would be simple enough to implement, however this close to my deadline I would need more time to make sure I did not change anything integral to the rest of the site.
+
+#### Left Clicking a Flag Tile
+
+- You are still able to left click a flag tile and the tile itself will be revealed.
+- However I have used a slight defence mechanism where the actual image itself can not be clicked therefore unless the player clicks the tiny gap inbetween the image and the border of the div, left click will not work.
+- Before it would automically reveal the tile when you clicked on the flag image so I have been able to manage this issue.
+- The reveal would also not work correctly, and the tile itself would not actually reveal if the tile was safe or had a mine, but after adding my bug fix it now reveals the tile if the user does so happen to click the tile.
+
+#### 
 
 ## **Deployment and Cloning**
 
