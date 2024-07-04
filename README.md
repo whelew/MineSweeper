@@ -4,6 +4,8 @@ Mine Sweeper, this website is a fully functional version of the original Mine Sw
 
 This website was used to demonstrate the power of JavaScript functions whilst also providing a fully function version of the game Mine Sweeper.
 
+![Screenshot of Live Site](/assets/images/live-site.png)
+
 # Table of Contents
 
 ## [Design](#design-1)
@@ -105,6 +107,8 @@ Here are the list of functions I prenamed:
 ### Error 404
 
 - I created a simple Error 404 page to direct any user looking for the website back to the main menu.
+
+![Current Error 404 Page](/assets/images/error404page.png)
 
 ## **Color Scheme**
 
