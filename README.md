@@ -379,22 +379,20 @@ This is one of my favourite functions.
 
 Each html page had an individual light house test. 
 
-- Each page had 100% good performance, accessibility, best practices. 
-- The instructions html had 96% for best practices.
-- Each reported 90% for SEO. 
-- I will improve the meta data to improve on this.
+- Each page had 100% good performance, accessibility, best practices and SEO. 
+- The instructions html was the only one to have a 96% for best practices and this is due the eventlistener on line 2:13 of script.js as it is not being called.
 
 ### Index HTML
 
-![Screen Shot of Light House Test on index.html](/assets/images/indexHTML.png)
+![Screen Shot of Light House Test on index.html](/assets/images/lightHouse-index.png)
 
 ### Score HTML
 
-![Screen Shot of Light House Test on index.html](/assets/images/scoreHTML.png)
+![Screen Shot of Light House Test on index.html](/assets/images/lightHouse-leaderBoard.png)
 
 ### Instructions HTML
 
-![Screen Shot of Light House Test on instructions.html](/assets/images/howToPlay.png)
+![Screen Shot of Light House Test on instructions.html](/assets/images/lightHouse-howToPlay.png)
 
 ## **Testing**
 
