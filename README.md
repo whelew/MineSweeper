@@ -425,7 +425,7 @@ Each html page had an individual light house test.
 
 - Tested CSS using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 
-- The CSS I left till the end of the project, if I wanted to change the game board size, all I needed to do was adjust the game boards actualy width and the game board divs depending on which media query it was for. 
+- The CSS I left till the end of the project, if I wanted to change the game board size, all I needed to do was adjust the game boards actual width and the game board divs depending on which media query it was for. 
 - A mobile screen with a width of 480px might have a game board of width 460px and game board divs with width and height of 23px. 
 
 ![Screen shot of succesful CSS Validator test](/assets/images/CSS%20Validator.png)
