@@ -139,12 +139,6 @@ The color of the numbers of the original game change color depending on what num
 7 = Black
 8 = Grey
 
-### Typography 
-
-I used a basic typography for the website as the main focus of this website was the functionality of the Java Script.
-- The font family I used are as follows: Arial, Helvetica, sans-serif.
-- This provides the user with a fallback font if the first font is not available for that users browser.   
-
 ![Original Number Color Scheme](/assets/images/originalMSColor.png)
 
 - For my design, I needed to change this as the contrast would not match my chosen color scheme. It also would have caused difficulty reading the number.
@@ -161,6 +155,12 @@ Here is my chosen color list:
 8 = Maroon
 
 ![New Number Color Scheme](/assets/images/newNumberColors.png)
+
+### Typography 
+
+I used a basic typography for the website as the main focus of this website was the functionality of the Java Script.
+- The font family I used are as follows: Arial, Helvetica, sans-serif.
+- This provides the user with a fallback font if the first font is not available for that users browser.   
 
 ## **Functions**
 
