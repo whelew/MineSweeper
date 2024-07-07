@@ -7,7 +7,7 @@ function loadBoard(event) {
     switch (event.target.id) {
         case "easy":
             levelSelect.innerHTML = `
-            <button class="menu-button" id="return-btn">Main Menu</button>
+            <button class="menu-button" id="return-btn" aria-label="button to return to the main menu">Main Menu</button>
             <br>
             <p class="flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">10</span>
             Timer:<span id="timer">0</span></p>
@@ -20,7 +20,7 @@ function loadBoard(event) {
             break;
         case "normal":
             levelSelect.innerHTML = `
-            <button class="menu-button" id="return-btn">Main Menu</button>
+            <button class="menu-button" id="return-btn" aria-label="button to return to the main menu">Main Menu</button>
             <br>
             <p class="flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">30</span>
             Timer:<span id="timer">0</span></p>
@@ -33,7 +33,7 @@ function loadBoard(event) {
             break; 
         case "hard":
             levelSelect.innerHTML = `
-            <button class="menu-button" id="return-btn">Main Menu</button>
+            <button class="menu-button" id="return-btn" aria-label="button to return to the main menu">Main Menu</button>
             <br>
             <p class="flag-counter"><img src="assets/images/flag.png">Flags Remaining:<span id="count">50</span>
             Timer:<span id="timer">0</span></p>
@@ -301,11 +301,11 @@ function gameOver() {
     <div id = "game-over-menu">
     <p>Game Over!</p>
     <br>
-    <button class="menu-button over" id="main-menu">Main Menu</button>
+    <button class="menu-button over" id="main-menu" aria-label="button to return to the main menu">Main Menu</button>
     <br>
-    <button class="menu-button over" id="r-button">Restart</button>
+    <button class="menu-button over" id="r-button" aria-label="button to restart the game">Restart</button>
     <br>
-    <button class="menu-button over" id="leader-board">Leader Board</button>
+    <button class="menu-button over" id="leader-board" aria-label="button to load the leader board">Leader Board</button>
     </div>
     `;
     document.body.appendChild(gameOverDisplay);
@@ -419,7 +419,7 @@ function displayWinMenu() {
     <br>
     <p>Your Score:<span id="score-value">0</span></P>
     <br>
-    <input type="submit" value="submit score" id="submit-btn">
+    <input type="submit" value="submit score" id="submit-btn" aria-label="button to submit score and load the leader board">
     </div>
     `;
     document.body.appendChild(winDisplay);
