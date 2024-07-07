@@ -49,6 +49,7 @@ This website was used to demonstrate the power of JavaScript functions whilst al
 
 - [Unresolved Bugs](#unresolved-bugs)
 - [Resolved Bugs](#resolved-bugs)
+- [Error 404 File Location](#error-404-file-location)
 
 ## [Future Implementations](#future-implementations-1)
 
@@ -110,6 +111,11 @@ Here are the list of functions I prenamed:
 ### Error 404
 
 - I created a simple Error 404 page to direct any user looking for the website back to the main menu.
+- Note: Error 404 page works correctly if user inputs https://whelew.github.io/MineSweeper/misspelled
+- However, if the users puts /index.html/misspelled all the file locations are wrong.
+- In the error 404 page the file paths are as assets/styles/style.css.
+- Previously using ../assets/styles/style.css - this file path works for when the user already has an .html already open. 
+- I would need to research a way to resolve this issue.
 
 ![Current Error 404 Page](/assets/images/error404page.png)
 
@@ -473,6 +479,13 @@ Each html page had an individual lighthouse test.
 - However, I have used a slight defence mechanism where the actual image itself can not be clicked therefore unless the player clicks the tiny gap between the image and the border of the div, left click will not work.
 - Before it would automatically reveal the tile when you clicked on the flag image so I have been able to manage this issue.
 - The reveal would also not work correctly, and the tile itself would not actually reveal if the tile was safe or had a mine, but after adding my bug fix it now reveals the tile if the user does so happen to click the tile.
+
+#### Error 404 File Location
+
+- I stated earlier that my error 404 page is working, however, it requires a specific file path depending on where the user inputs the misspelling.
+- Working example would be https://whelew.github.io/MineSweeper/misspelling
+- Non-functioning example would be https://whelew.github.io/MineSweeper/score.html/misspelling
+- I would need to research a method to resolve this issue as I am unsure of how to navigate the file paths.
 
 ### Resolved Bugs
 
