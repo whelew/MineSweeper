@@ -437,10 +437,10 @@ function calculateScore() {
 }
 
 function submitScore() {
-    let nameV = document.getElementById("fname").value;
-    let scoreV = document.getElementById("score-value").innerText;
-    localStorage.setItem("name", nameV);
-    localStorage.setItem("score-value", scoreV);
+    let fNameValue = document.getElementById("fname").value;
+    let scoreValue = document.getElementById("score-value").innerText;
+    localStorage.setItem("name", fNameValue);
+    localStorage.setItem("score-value", scoreValue);
     window.location.href = "score.html";
     loadLeaderBoard();
 }
