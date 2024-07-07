@@ -444,6 +444,7 @@ Each html page had an individual lighthouse test.
 |Reveal Tile |Left Click On a Tile |Tile is revealed to either be a safe tile or a mine tile. |Pass |
 |Reveal Other Tiles| Left Click On a Safe Tile |After tile is revealed and has no mines around it, it will reveal those tiles as well. This function will repeat until number tiles are found. |Pass |
 |Mark Tile |Right Click on a Tile |If you right click on a tile it will place a flag image to mark that spot with a flag. This lets the player note down which spots they believe have mines in them. |Pass |
+|Losing The Game |Left click a Mine Tile | I should die and lose the game | Pass |
 |Reveal All Mines |Left click a Mine Tile |Left clicking a mine tile will reveal that tile as a mine and all other mine tiles will be revealed. |Pass |
 |Remove All Flags |Left click on a Mine Tile | When all mines are revealed, if those tiles initially had been marked by a flag, the flag would be removed and replaced by a mine. |Pass |
 |Load Board |Clicking Easy, Normal or Hard |This will load a board of either 8x8, 12x12, 12x20 depending on the difficulty. |Pass |
