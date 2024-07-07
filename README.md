@@ -14,10 +14,11 @@ This website was used to demonstrate the power of JavaScript functions whilst al
 - [Game Board](#game-board)
 - [Leader Board](#leader-board)
 
-## [Color Scheme](#color-scheme-1)
+## [Color Scheme and Typography](#color-scheme-and-typography-1)
 
 - [Color Charts](#color-charts)
 - [Number Colors](#number-colors)
+- [Typography](#typography)
 
 ## [Functions](#functions-1)
 
@@ -112,7 +113,7 @@ Here are the list of functions I prenamed:
 
 ![Current Error 404 Page](/assets/images/error404page.png)
 
-## **Color Scheme**
+## **Color Scheme and Typography**
 
 ### Color Charts
 
@@ -137,6 +138,12 @@ The color of the numbers of the original game change color depending on what num
 6 = Cyan
 7 = Black
 8 = Grey
+
+### Typography 
+
+I used a basic typography for the website as the main focus of this website was the functionality of the Java Script.
+- The font family I used are as follows: Arial, Helvetica, sans-serif.
+- This provides the user with a fallback font if the first font is not available for that users browser.   
 
 ![Original Number Color Scheme](/assets/images/originalMSColor.png)
 
