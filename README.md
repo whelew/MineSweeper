@@ -1,8 +1,8 @@
 # **Mine Sweeper - Using HTML and JavaScript**
 
-Mine Sweeper, this website is a fully functional version of the original Mine Sweeper game from 1990. Using a mixture of JavaScript functions, HTML and CSS to create the game.
+Mine Sweeper, this website is a fully functional version of the original Mine Sweeper game from 1990. I am using a mixture of JavaScript functions, HTML, and CSS to create the game.
 
-This website was used to demonstrate the power of JavaScript functions whilst also providing a fully function version of the game Mine Sweeper.
+This website was used to demonstrate the power of JavaScript functions whilst also providing a fully functional version of the game Mine Sweeper.
 
 ![Screenshot of Live Site](/assets/images/live-site.png)
 
@@ -31,7 +31,7 @@ This website was used to demonstrate the power of JavaScript functions whilst al
 - [Loading Pages](#loading-pages)
 - [Extra Functions](#extra-functions)
 
-## [LightHouse Test](#light-hosue-test)
+## [Lighthouse Test](#light-hosue-test)
 
 - [Index HTML](#index-html)
 - [Score HTML](#score-html)
@@ -73,11 +73,11 @@ The design of the web page would be very simple. Originally the menu screen was 
 
 ### Menu Screen
 
-The original menu screen, 4 buttons 3 of which would open a game board of varying sizes depending on difficulty.
+The original menu screen had 4 buttons, 3 of which would open a game board of varying sizes depending on difficulty.
 
-Using this wireframe I precreated some function names I would need:
+Using this wireframe I created some function names I would need:
 - loadBoard(); (Easy, Normal, Hard); // Load the board depending on difficulty.
-- loadLBoard(); //Load the Leader Board.
+- loadLeaderBoard(); //Load the Leader Board.
 
 ![Wireframe of original Menu Screen](/assets/images/menuscreen.png)
 
@@ -85,7 +85,7 @@ Using this wireframe I precreated some function names I would need:
 
 The game board was a difficult process to create however the basic model of it on the webpage was very simple. It needed the Mine Sweeper header, Flag Counter and Timer, and the actual Game Board.
 
-Using this wireframe here are the list of functions I prenamed: 
+Using this wireframe here is the list of functions I prenamed: 
 - runGame();
 - populateGameBoard(); // This became the runGame and createBoard function
 - incrementFlags();
@@ -98,10 +98,10 @@ Using this wireframe here are the list of functions I prenamed:
 
 ### Leader Board
 
-The Leader Board would show the results of the players final score, this would be based off of their time taken to complete the level.
+The Leader Board would show the results of the player's final score, this would be based off of the time taken to complete the level.
 
 Here are the list of functions I prenamed:
-- updateLeaderBoard() //This would update the players score and push it into the leaderboard
+- updateLeaderBoard() //This would update the player's score and push it into the leaderboard
 - returnToMainMenu() //User returns to main menu
 
 ![Wireframe of original Leader Board](/assets/images/leaderboard.png)
@@ -120,11 +120,11 @@ Here are the list of functions I prenamed:
 
 ![Original Mine Sweeper Color Scheme](/assets/images/originalMSColor.png)
 
-- I really liked the old minesweeper color scheme, however I wanted to make a more original design so I went with this color scheme (image below).
+- I really liked the old minesweeper color scheme, however, I wanted to make a more original design so I went with this color scheme (image below).
 
 ![Screen Shot of Current Color Scheme](/assets/images/mineSweeperColorScheme.png)
 
-This color scheme works really well, the board tiles are clearly marked and it is easy to distinguish whether a tile has been revealed or not. 
+This color scheme works well, the board tiles are clearly marked and it is easy to distinguish whether a tile has been revealed or not. 
 
 ### Number Colors
 
@@ -140,8 +140,8 @@ The color of the numbers of the original game change color depending on what num
 
 ![Original Number Color Scheme](/assets/images/originalMSColor.png)
 
-- For my design I needed to change this as the contrast would not match my chosen color scheme. It also would have caused difficulty reading the number.
-- The colors vary less, and instead get darker as the number increases.  
+- For my design, I needed to change this as the contrast would not match my chosen color scheme. It also would have caused difficulty reading the number.
+- The colors vary less and instead get darker as the number increases.  
 
 Here is my chosen color list:
 1 = Gold 
@@ -159,16 +159,16 @@ Here is my chosen color list:
 
 ### Generating The Board:
 
-Initially I was going to create 3 seperate html pages for each board, however I had learned during my course you could use back ticks `` alongside .innerhtml to change a current elements inner html. For future implementation, creating 3 seperate html pages would have been a lot simpler to implement as there were more functions than anticipated and trying to target the correct id or class became difficult at times as I had to use query selectors and for loops many times.
+Initially, I was going to create 3 separate html pages for each board, however, I had learned during my course you could use backticks `` alongside .innerhtml to change a current element's inner html. For future implementation, creating 3 separate html pages would have been a lot simpler to implement as there were more functions than anticipated, and trying to target the correct id or class became difficult at times as I had to use query selectors and for loops many times.
 
 #### loadBoard(event);
 
-- The loadBoard function changes the current innerHtml content of the div with class="board" and id="menu". It creates a new menu button, a flag counter, timer and a div with class="game-board". The id of the board is determinded by a switch statement, depending on which menu button was hit, it will check through the cases, and whether the id was "easy", "normal" or "hard" will generate a board with that specific id. 
+- The loadBoard function changes the current innerHtml content of the div with class="board" and id="menu". It creates a new menu button, a flag counter, timer, and a div with class="game-board". The id of the board is determined by a switch statement, depending on which menu button was hit, it will check through the cases, and whether the id was "easy", "normal" or "hard" will generate a board with that specific id. 
 - The loadBoard function also contains several other functions, one being populateGameBoard. 
 
 #### populateGameBoard(rows, columns, boardId);
 
-- The populateGameBoard function, creates a series of divs, all with a specific id that is stored in an array called board. For example, [{0, 0}, {0, 1}, {0, 2}] all the way up to {7,7} for a board with id="easy". It uses two for loops to create rows and columns with specific ids. It also adds event listeners to the divs themselves, one for ("click", revealTile) and ("contextmenu", markTile) left click and right click. The arguments rows, columns and boardID are declared inside of the loadBoard function:
+- The populateGameBoard function, creates a series of divs, all with a specific id that is stored in an array called board. For example, [{0, 0}, {0, 1}, {0, 2}] up to {7,7} for a board with id="easy". It uses two for loops to create rows and columns with specific IDs. It also adds event listeners to the divs themselves, one for ("click", revealTile) and ("contextmenu", markTile) left click and right click. The arguments rows, columns, and boardID are declared inside of the loadBoard function:
 - Easy (8, 8, "easy-board")
 - Normal (12, 12, "normal-board")
 - hard (12, 20, "hard-board")
@@ -177,38 +177,38 @@ Initially I was going to create 3 seperate html pages for each board, however I 
 
 #### setMines(numMines, rows, columns);
 
-- This function declares the number of Mines = numMines, and also uses rows and columns to justify there location.
+- This function declares the number of Mines = numMines, and also uses rows and columns to justify their location.
 - Easy (10, 8, 8,)
 - Normal (30, 12, 12)
 - hard (50, 12, 20,)
 
-- Inside the function it uses a Math.floor(Math.random()) method multiplied by either the rows or columns argument. It then sets the location as an array which will then later be used to identify which tile has a mine using the setMineId function.
+- Inside the function, it uses a Math.floor(Math.random()) method multiplied by either the rows or columns argument. It then sets the location as an array which will then later be used to identify which tile has a mine using the setMineId function.
 
 #### setMineId()
 
 - This function sets the Id of a div to id="mine-tile" depending on whether the tile Id and the random generated Id from setMines function match up. 
-- It uses a for loop to cycle through the length of the game-tile class list, splits the id down the middle by the previously added "-" in the populate game board, turns the string into a number as a variable declared [row, col]. 
-- An if statement is then used to check if the current tiles coordinates match any of the coordiantes in a predefined array Mines. 
+- It uses a for loop to cycle through the length of the game-tile class list, splits the Id down the middle by the previously added "-" in the populate game board, turns the string into a number as a variable declared [row, col]. 
+- An if statement is then used to check if the current tile coordinates match any of the coordinates in a predefined array called Mines. 
 - If a match is found it adds that tile to a classList of "mine-tile". 
 
 ### Revealing the Tiles:
 
 #### revealTile(event)
 
-This function contains alot of other functions, it contains several if statements which determine the state of the tile clicked.
+This function contains a lot of other functions, it contains several if statements which determine the state of the tile clicked.
 
 - If the tile contains a flag or a mine has been pressed it will return, stopping the player from being able to click the tiles after the game is over. 
-- This was needed because after the game had finished clicking on a mine tile again would cause another mine img to be pushed into the tile resulting in an unwanted feature.
+- This was needed because after the game had finished clicking on a mine tile again would cause another mine image to be pushed into the tile resulting in an unwanted feature.
 - The second if statement checks if the tile contains a mine, if it does it will cause a series of other functions to occur. 
 - Else it will then call the checkTile function, adding it to a revealed classList, whilst also calling the checkNum function.
 - If the tile click detects no mines around it, it will then call the revealOtherTiles function. 
 
 #### checkTile(row, col)
 
-The checkTile function needed to be able to check the surronding tiles and whether they contained mines or not. To do this it used an array of arrays.
+The checkTile function needed to be able to check the surrounding tiles and whether they contained mines or not. To do this it used an array of arrays.
 
 - The arrays: [[1, 1], [1, -1], [1, 0], [-1, 1], [-1, 0], [-1, -1], [0, 1], [0, -1],];
-- The gameRow and gameColumn are declared without a value, the value is then determined by the current boards id.
+- The gameRow and gameColumn are declared without a value, the value is then determined by the current boards Id.
 - mineCount declares the current number of mines.
 - The for loop then loops through each direction.
 - If then checks whether the coordinates are in the board.
@@ -217,9 +217,9 @@ The checkTile function needed to be able to check the surronding tiles and wheth
 
 #### revealOtherTiles (row, col)
 
-This function is very similar to the checkTile function, the main difference is, it needs to check the tiles already checked. If the tiles checked are safe and empty it will then make those tiles check the tiles around them until a tile with a number is found.
+This function is very similar to the checkTile function, the main difference is, that it needs to check the tiles already checked. If the tiles checked are safe and empty it will then make those tiles check the tiles around them until a tile with a number is found.
 
-- It uses the same arrays as the previous function, and also declares the same gameRow and gameColumn function.
+- It uses the same arrays as the previous function and also declares the same gameRow and gameColumn function.
 - The first if statement works the same checking whether the coordinates are in the board.
 - A variable tile is declared getting the element by id. 
 - The second if statement however checks if the tiles around the tile clicked contain the class name of "revealed", if so, it will then automatically click these tiles.
@@ -230,7 +230,7 @@ This function is very similar to the checkTile function, the main difference is,
 This function uses a for loop to loop through all game-tiles with the class "mine-tile". When a mine is clicked this function will be called.
 
 - The function itself creates a new element (img).
-- It sets thge src attribute.
+- It sets the src attribute.
 - Sets the id.
 - Adds it to the class "revealed-mine".
 - Then appends an img of a mine as a child.
@@ -252,13 +252,13 @@ This tile prevents the default contextmenu function and instead replaces it with
 
 #### removeAllFlags()
 
-This function was designed after play testing the game and realising that when mines were revealed the flag would still remain on the mine tile causing a visual bug where both the mine image and the flag image were inside of one div.
+This function was designed after play testing the game and realising that when mines were revealed the flag would remain on the mine tile causing a visual bug where both the mine image and the flag image were inside of one div.
 
 A more suitable name would be removeAllFlagsFromMines, but this seemed too long.
 
-- A variable is declared to get all tiles with class "mine-tile".
+- A variable is declared to get all tiles with the class "mine-tile".
 - A for loop is then used to iterate through the length of the mine tiles.
-- A second variable is declared to get all elements with class name "flag-tile".
+- A second variable is declared to get all elements with the class name "flag-tile".
 - The while loop will continue as long as there are flag elements present. 
 - It will then remove that child from the mine tile. 
 
@@ -268,7 +268,7 @@ A more suitable name would be removeAllFlagsFromMines, but this seemed too long.
 
 This function checks to see if the number of revealed tiles is === to the number of safeTiles.
 
-- The safeTiles variable value is decided by an if statement checking the boards id, it then sets the value to either, 54 for easy, 114 for normal and 174 for hard.
+- The safeTiles variable value is decided by an if statement checking the board's Id, it then sets the value to either, 54 for easy, 114 for normal, and 174 for hard.
 - The function is called on every left click of a tile.
 - It uses an if statement to check safeTiles and revealedTiles are equal.
 - If so it will run a series of other functions.
@@ -277,27 +277,27 @@ This function checks to see if the number of revealed tiles is === to the number
 
 This function creates a new element div. This div is then appended as a child of the body.
 
-- The div is fileld with a new inner html using back ticks `` to declare all the elements inside the div.
+- The div is field with a new inner html using backticks `` to declare all the elements inside the div.
 - The div is then appended to as a child to the document.body.
 
 #### gameOver()
 
-This function includes what the dispalyWinMenu function does, but instead of calling it from a seperate function it is already contained inside the gameOver function.
+This function includes what the dispalyWinMenu function does, but instead of calling it from a separate function, it is already contained inside the gameOver function.
 
-- Creates div element with id of "game-over-menu".
+- Creates div element with the id of "game-over-menu".
 - div.innerHTML is then set.
 - It then appends the div as a child of the body.
 - It declares 3 variables and adds 1 event listener to each of them.
-- These are the restart, return to main menu and leader board buttons. 
+- These are the restart, return to the main menu, and leader board buttons. 
 
 #### restartGame()
 
-This function gets all the elements by id of the game boards. It then uses those ids to call back the loadBoard(event).
+This function gets all the elements by the Id of the game boards. It then uses those ids to call back the loadBoard(event).
 
 - The event is declared as event = target: {id: "gameBoardId"}
-- Depending on which id is declared, it will then call the loadBoard function.
-- In affect it loads an entire new board hence restarting the game.
-- All tiles will have been changed, mines spot will have moved. 
+- Depending on which Id is declared, it will then call the loadBoard function.
+- In effect it loads an entire new board hence restarting the game.
+- All tiles will have been changed, and mines spot will have moved. 
 - It also uses an if statement to check whether the gameOverDisplay is on screen, if so, this will be removed. 
 
 
@@ -306,8 +306,8 @@ This function gets all the elements by id of the game boards. It then uses those
 #### incrementTimer()
 
 - Gets timer element by id "timer".
-- Declares second variable of get element by id "timer", however uses parseInt to get a number value.
-- It then sets the innerText of original timer element to, number value + 1. 
+- Declares the second variable of get element by id "timer", however, uses parseInt to get a number value.
+- It then sets the innerText of the original timer element to, number value + 1. 
 
 #### startTimer()
 
@@ -316,32 +316,32 @@ This function calls the incrementTimer function.
 - If timerInterval is not already defined, falsy.
 - If no timer is running, it uses a setInterval JavaScript function to call the incrementTimer function. (setInterval(incrementTimer,1000))
 - The 1000 refers to 1000 milliseconds and therefore, 1 second.
-- IncrementTimer will therefore increment current time by a value of 1 every second.
+- IncrementTimer will therefore increment the current time by a value of 1 every second.
 
 #### stopTimer()
 
 This function stops the timer.
 
 - If timerInterval is truthy, it will log the value of the timerInterval.
-- It will clearInterval to stop previous incrementTimer function being called again.
+- It will clearInterval to stop the previous incrementTimer function from being called again.
 - Set timerInterval back to 0; 
 
 ### Setting up the Score:
 
 #### calculateScore()
 
-This function takes the value of the current timer and sets the innerText of the element with id of "score-value" to this value.
+This function takes the value of the current timer and sets the innerText of the element with Id of "score-value" to this value.
 
 - Sets score value to timer value.
 - Adds event listener to the submitBtn which calls submitScore function.
 
 #### submitScore()
 
-This function stores user name and user score to local storage.
+This function stores the user name and user score in local storage.
 
 - Declares variables by element id.
 - Stores these variables into localStorage using JavaScript function setItem().
-- It then calls loadLBoard function, loading up the leader board html page.
+- It then calls loadLBoard function, loading up the leaderboard html page.
 
 ### Loading Pages:
 
@@ -373,11 +373,11 @@ This is one of my favourite functions.
 - It declares a variable with the value of the number value innerText of the current tile (innerNum = parseInt(this.innerText)).
 - It then uses a series of if else statements to check the innerNum value against 1 - 8. 
 - It will then add that tile to a class of "number-one" through to "number-eight".
-- CSS will then change the innerText of the tiles color to a specific color for that class.
+- CSS will then change the color of the innerText to a specific color for that class.
 
 ## **Light Hosue Test**
 
-Each html page had an individual light house test. 
+Each html page had an individual lighthouse test. 
 
 - Each page had 100% good performance, accessibility, best practices and SEO. 
 - The instructions html was the only one to have a 96% for best practices and this is due the eventlistener on line 2:13 of script.js as it is not being called.
@@ -406,14 +406,14 @@ Each html page had an individual light house test.
 
 - The results for my script.js came back positive except for 3 warnings.
 - 3 Functions declared within loops reference an outer scoped variable ("mines").
-- This may lead to confusing semantics. However the functionality works fine and the game runs as it should.
+- This may lead to confusing semantics. However, the functionality works fine and the game runs as it should.
 
 ![Screen shot of JSHint for script.js](/assets/images/script.js.png)
 
 ### HTML Validator 
 
 - Tested all HTML pages using [W3C Validator](https://validator.w3.org/).
-- All pages passed withour error.
+- All pages passed without error.
 
 ![Screen shot of index.html](/assets/images/index.html.valid.png)
 
@@ -425,7 +425,7 @@ Each html page had an individual light house test.
 
 - Tested CSS using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 
-- The CSS I left till the end of the project, if I wanted to change the game board size, all I needed to do was adjust the game boards actual width and the game board divs depending on which media query it was for. 
+- The CSS I left till the end of the project, if I wanted to change the game board size, all I needed to do was adjust the game board's actual width and the game board divs depending on which media query it was for. 
 - A mobile screen with a width of 480px might have a game board of width 460px and game board divs with width and height of 23px. 
 
 ![Screen shot of succesful CSS Validator test](/assets/images/CSS%20Validator.png)
@@ -438,13 +438,13 @@ Each html page had an individual light house test.
 |Reveal Other Tiles| Left Click On a Safe Tile |After tile is revealed and has no mines around it, it will reveal those tiles as well. This function will repeat until number tiles are found.|
 |Mark Tile |Right Click on a Tile |If you right click on a tile it will place a flag image to mark that spot with a flag. This lets the player note down which spots they believe have mines in them.|
 |Reveal All Mines |Left click a Mine Tile |Left clicking a mine tile will reveal that tile as a mine and all other mine tiles will be revealed.|
-|Remove All Flags |Left click on a Mine Tile | When all mines are revealed, if those tiles initally had been marked by a flag, the flag would be removed and replaced by a mine. |
+|Remove All Flags |Left click on a Mine Tile | When all mines are revealed, if those tiles initially had been marked by a flag, the flag would be removed and replaced by a mine. |
 |Load Board |Clicking Easy, Normal or Hard |This will load a board of either 8x8, 12x12, 12x20 depending on the difficulty.|
-|Populate Game Board| Clicking Difficulty |This will populate the game board with divs known as tiles and set them all ids.|
-|Set Mine Id |When Game Board Loads |Mine ids will have been randomly generated then matched to a specific tile on the newly generated game board.|
-|Load Game Over Display |Lose the Game |When a player loses the game a new child of the body will appear telling the player the game is over, it includes 3 buttons allowing them to either restart, load main menu or visit the leaderboard.|
-|Load Win Menu Display |Win the Game |When a player wins the game a new child of the body will appear telling the player they won the game, what their score is and provide them with a name input and a submit score button.|
-|Update Leader Board | Click Submit Score |When submit score is clicked it will transfer the user to the leaderboard page and upload their time as a score. The leader board will then update the leaderboard and put the quickest time at the top and the slowest time at the bottom. |
+|Populate Game Board| Clicking Difficulty |This will populate the game board with divs known as tiles and set them all Ids.|
+|Set Mine Id |When Game Board Loads |Mine Ids will have been randomly generated and then matched to a specific tile on the newly generated game board.|
+|Load Game Over Display |Lose the Game |When a player loses the game a new child of the body will appear telling the player the game is over, it includes 3 buttons allowing them to either restart, load the main menu, or visit the leaderboard.|
+|Load Win Menu Display |Win the Game |When a player wins the game a new child of the body will appear telling the player they won the game, what their score is, and provide them with a name input and a submit score button.|
+|Update Leader Board | Click Submit Score |When submit score is clicked it will transfer the user to the leaderboard page and upload their time as a score. The leaderboard will then update the leaderboard and put the quickest time at the top and the slowest time at the bottom. |
 
 ## **Bugs and Debugging**
 
@@ -455,15 +455,15 @@ Each html page had an individual light house test.
 #### Game Board Size - Media Queries
 
 - The main issue is adjusting all the media queries correctly for mobile screen sizes. 
-- Ideally I would like to make my hard game mode longer in height and shorter in width, this would help the game adapt to the width and height of a mobile screen. 
+- Ideally, I would like to make my hard game mode longer in height and shorter in width, this would help the game adapt to the width and height of a mobile screen. 
 - This would mean that I would need to adjust all the arguments for the functions themself which might get complicated this late in development, this is something I should have considered earlier on. 
 - It would be simple enough to implement, however this close to my deadline I would need more time to make sure I did not change anything integral to the rest of the site.
 
 #### Left Clicking a Flag Tile
 
 - You are still able to left click a flag tile and the tile itself will be revealed.
-- However I have used a slight defence mechanism where the actual image itself can not be clicked therefore unless the player clicks the tiny gap inbetween the image and the border of the div, left click will not work.
-- Before it would automically reveal the tile when you clicked on the flag image so I have been able to manage this issue.
+- However, I have used a slight defence mechanism where the actual image itself can not be clicked therefore unless the player clicks the tiny gap between the image and the border of the div, left click will not work.
+- Before it would automatically reveal the tile when you clicked on the flag image so I have been able to manage this issue.
 - The reveal would also not work correctly, and the tile itself would not actually reveal if the tile was safe or had a mine, but after adding my bug fix it now reveals the tile if the user does so happen to click the tile.
 
 ### Resolved Bugs
@@ -471,7 +471,7 @@ Each html page had an individual light house test.
 #### Mines not removing Flag Image
 
 - The mines now remove all flag images on a mine tile when all mines are revealed.
-- Before this my funciton would cause the mines to remove the first flag image on a mine tile but not the rest.
+- Before this, my function would cause the mines to remove the first flag image on a mine tile but not the rest.
 - It was not looping through the mine tile array properly, therefore a while loop was needed. 
 - As long as the length of flagTiles was greater than 0 on a mine tile it would continue to loop.
 
@@ -479,7 +479,7 @@ Each html page had an individual light house test.
 
 - The left and right click both continued to work after gameOver or winGame had been called.
 - To combat this, I created a disableListener function to be called when the previous functions had been called.
-- This means that while the tiles themselves are still active, they have no active listener to active the functions. 
+- This means that while the tiles themselves are still activate, they have no active listener to active the functions. 
 
 
 ## **Future Implementations**
@@ -489,30 +489,30 @@ Each html page had an individual light house test.
 #### New Column
 
 - The leader board is missing one column, the level difficulty.
-- This would be useful as only players times are being recorded, meaning that a player might get a time of 300 and be bottom of the leaderboard, however they did this time on the hard board. 
-- I would most likely add a new columm or have 3 seperate leaderboards all together.
+- This would be useful as only player's times are being recorded, meaning that a player might get a time of 300 and be bottom of the leaderboard, however, they did this time on the hard board. 
+- I would most likely add a new column or have 3 separate leaderboards all together.
 - This would later develop into the leaderboard html having 4 tabs, "Easy", "Normal", "Hard" and "Global". 
 - Global would include all 3 difficulties. 
 
 #### Database
 
-- The leaderboard does update the players score on victory to the leaderboard, however this is only in local storage.
+- The leaderboard does update the player's score on victory to the leaderboard, however, this is only in local storage.
 - If the player refreshes the page this score will be lost.
-- I would like to be able to develop a data base so every users score can be saved and compared against other competitors.
-- I would then be able to extend the length of my leaderboard as well as it having global scores rather than only local based ones.
+- I would like to be able to develop a database so every users score can be saved and compared against other competitors.
+- I would then be able to extend the length of my leaderboard as well as it having global scores rather than only local-based ones.
 
 ### Game Music
 
 - I would like to be able to add a music player that the user can choose to turn on and off and adjust the volume manually. 
-- I have done a masters in video game composition and would like to compose the music myself as this would be a great reference for personal work.
+- I have done a master's in video game composition and would like to compose the music myself as this would be a great reference for personal work.
 
 ### Theme Selector
 
 - A theme selector would be a very fun feature to add.
-- It would be easy enough to implement, however take some time making sure the function targeted every element correctly and changed their classes accordingly.
+- It would be easy enough to implement, however, it will take some time to make sure the function targeted every element correctly and changes their classes accordingly.
 - The theme selector would then change the elements class, and these classes would have their own CSS.
 - I would be able to include the original Mine Sweeper Theme (a variation of grays).
-- Alongside many others, forest themed, space themed, fire, water, in the sky, etc. 
+- Alongside many others, forest-themed, space-themed, fire, water, in the sky, etc. 
 
 ## **Deployment and Cloning**
 
@@ -526,7 +526,7 @@ Each html page had an individual light house test.
 5. Then make sure the Branch is set to "Main" and the folder selected is the "root" folder.
 6. After this click save and this will deploy a live version of the website.
 
-Live site can be found here: https://whelew.github.io/MineSweeper/instructions.html
+The live site can be found here: https://whelew.github.io/MineSweeper/instructions.html
 
 ### Cloning
 
@@ -544,7 +544,7 @@ Live site can be found here: https://whelew.github.io/MineSweeper/instructions.h
 
 - HTML5
 - CSS - Cascading Style Sheet used to style the website.
-- Java Script - Uses 30 functions in script.js to generate game board and all game rules and functionality.
+- Java Script - Uses 30 functions in script.js to generate a game board and all game rules and functionality.
 - VS Code - The main IDE that I used. 
 - W3schools - For quick and useful information when trying to problem solve when writing with HTML and CSS.
 - JSHint - To check over my JS code.
@@ -552,8 +552,8 @@ Live site can be found here: https://whelew.github.io/MineSweeper/instructions.h
 ## **Credits**
 
 - This project required a lot of research and patience. I was able to use many helpful resources at my disposal to help me create and finish my website.
-- [Kenny Yip Coding](https://www.youtube.com/@KennyYipCoding) was a helpful youtube channel. This is where I got the orignal populate board function from and decided to use that as inspiration and use it as a foundation to my own website.
-- [w3schools](https://www.w3schools.com/) was also a helpful website for trouble shooting html, css and js issues.
-- [stack overflow](https://stackoverflow.com/) was another helpful website for trouble shooting issues. This is where I found out about the javascript built in functions.
+- [Kenny Yip Coding](https://www.youtube.com/@KennyYipCoding) was a helpful youtube channel. This is where I got the original populate board function from and decided to use that as inspiration and use it as a foundation for my own website.
+- [w3schools](https://www.w3schools.com/) was also a helpful website for troubleshooting html, css and js issues.
+- [stack overflow](https://stackoverflow.com/) was another helpful website for troubleshooting issues. This is where I found out about the javascript built-in functions.
 - My mentor Luke has also provided me with helpful and useful feedback for me to implement.
 - Icons were used for the footer from [Font Awesome](https://fontawesome.com/icons)
