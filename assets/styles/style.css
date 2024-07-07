@@ -241,6 +241,11 @@ body {
     font-size: 22px;
 }
 
+/* Margin for leaderboard button */
+#instruct-btn {
+    margin-bottom: 3rem;
+}
+
 .number-one {
     color: #FFD700;
 }
